@@ -9,3 +9,15 @@ Pas download, ntar disuruh bikin akun. Habis bikin akun bakal disuruh mau instal
 ![img](img/install_1.png)
 
 Setelah install. Buka Qt Creator, terus buka file ```CalculatorOOP.pro```
+
+# Expression Evaluator
+Udah dibikin, udh bisa ekspresi negatif, nested (dalam kurung dll gitu), contoh:
+```
+1 + 4
+1 + 2 * 3
+1 + sin ( 30 )
+1 + sqrt ( 2 + sqrt ( 8 * sin ( 30 ) ) )
+1 - 2 + -3
+```
+
+Tinggal compile ExpressionEvaluator.cpp terus jalanin aja exe nya. Belum disambungin ke GUI
