@@ -1,68 +1,43 @@
-#include <bits/stdc++.h>
-using namespace std;
+#include "Parser.h"
 
-const double PI = acos(-1);
-
-map<string, int> prc;
-set<string> binaryOps;
-set<string> unaryOps;
-
-void initOps();
-void splitTokens(string strTokens, vector<string> &tokens);
-bool isBinaryOp(string opr);
-bool isUnaryOp(string opr);
-bool isUnaryStmt(string stmt, double &val, string &unaryOp);
-double evalUnaryOp(double a, string unaryOp);
-double evalBinaryOp(double a, double b, string binaryOp);
-double evalExpression(string strTokens);
-
-int main() {
-    // mau output berapa angka di belakang koma. untuk ini, 3 angka dibelakang koma
-    cout << fixed << setprecision(3);
-    
-    initOps();
-
-    // Coba masukkin ekspresi matematika yang mau dievaluasi, setiap token dipisahin oleh spasi
-    // Contoh :
-    // 1 + 4
-    // 1 + 2 * 3
-    // 1 + sin ( 30 )
-    // 1 + sqrt ( 2 + sqrt ( 8 * sin ( 30 ) ) )
-    // 1 - 2 + -3
-    string s;
-    while (getline(cin, s)) {
-        try {
-            cout << "Expression: " << s << '\n';
-            cout << "Value: " << evalExpression(s) << '\n';
-        } catch (invalid_argument& ia) {
-            cout << "Invalid argument: " << ia.what() << '\n';
-        } catch (const char* s) {
-            cout << "Error: " << s << '\n';
-        }
-        cout << '\n';
-    }
-    return 0;
+Parser::Parser()
+{
 }
 
-void initOps() {
+map<string, int> Parser::initPrc() {
+    map<string, int> ret;
     // nilai precedence sebuah operator
-    prc["+"] = 1;
-    prc["-"] = 1;
-    prc["*"] = 2;
-    prc["-"] = 2;
+    ret["+"] = 1;
+    ret["-"] = 1;
+    ret["*"] = 2;
+    ret["-"] = 2;
     // everything else is 0
-
-    binaryOps.insert("+");
-    binaryOps.insert("-");
-    binaryOps.insert("*");
-    binaryOps.insert("/");
-
-    unaryOps.insert("sqrt");
-    unaryOps.insert("sin");
-    unaryOps.insert("cos");
+    return ret;
 }
 
-void splitTokens(string strTokens, vector<string> &tokens) {
+set<string> Parser::initBinaryOps() {
+    set<string> ret;
+    ret.insert("+");
+    ret.insert("-");
+    ret.insert("*");
+    ret.insert("/");
+    return ret;
+}
+
+set<string> Parser::initUnaryOps() {
+    set<string> ret;
+    ret.insert("sqrt");
+    ret.insert("sin");
+    ret.insert("cos");
+    return ret;
+}
+
+map<string, int> Parser::prc = initPrc();
+set<string> Parser::binaryOps = initBinaryOps();
+set<string> Parser::unaryOps = initUnaryOps();
+const double Parser::PI = acos(-1);
+
+void Parser::splitTokens(string strTokens, vector<string> &tokens) {
     stringstream ss(strTokens);
     string curToken;
     vector<string> tmp;
@@ -104,15 +79,15 @@ void splitTokens(string strTokens, vector<string> &tokens) {
     }
 }
 
-bool isBinaryOp(string opr) {
+bool Parser::isBinaryOp(string opr) {
     return binaryOps.find(opr) != binaryOps.end();
 }
 
-bool isUnaryOp(string opr) {
+bool Parser::isUnaryOp(string opr) {
     return unaryOps.find(opr) != unaryOps.end();
 }
 
-bool isUnaryStmt(string stmt, double &val, string &unaryOp) {
+bool Parser::isUnaryStmt(string stmt, double &val, string &unaryOp) {
     unaryOp = "";
     stringstream ss(stmt);
     string curToken;
@@ -121,7 +96,7 @@ bool isUnaryStmt(string stmt, double &val, string &unaryOp) {
     while (ss >> curToken) {
         tmp.push_back(curToken);
     }
-    
+
     int sz = tmp.size();
     unaryOp = tmp[0];
     if (!(tmp[1] == "(" && tmp[sz - 1] == ")")) {
@@ -145,7 +120,7 @@ bool isUnaryStmt(string stmt, double &val, string &unaryOp) {
     }
 }
 
-double evalUnaryOp(double a, string unaryOp) {
+double Parser::evalUnaryOp(double a, string unaryOp) {
     if (unaryOp == "sin") {
         return sin(a * PI / 180);
     } else if (unaryOp == "cos") {
@@ -157,7 +132,7 @@ double evalUnaryOp(double a, string unaryOp) {
     return sqrt(a);
 }
 
-double evalBinaryOp(double a, double b, string binaryOp) {
+double Parser::evalBinaryOp(double a, double b, string binaryOp) {
     // cout << "EVALUATING: " << a << ' ' << binaryOp << ' ' << b << '\n';
     if (binaryOp == "+") return a + b;
     else if (binaryOp == "-") return a - b;
@@ -166,7 +141,7 @@ double evalBinaryOp(double a, double b, string binaryOp) {
     return a / b;
 }
 
-double evalExpression(string strTokens) {
+double Parser::evalExpression(string strTokens) {
     vector<string> tokens;
     tokens.clear();
     splitTokens(strTokens, tokens);
@@ -176,11 +151,14 @@ double evalExpression(string strTokens) {
     stack<double> values;
     stack<string> operators;
     int sz = tokens.size();
-    // for (int i = 0; i < sz; i++) {
-    //     cout << i << ": " << tokens[i] << '\n';
-    // }
+    cout << strTokens << '\n';
+    for (int i = 0; i < sz; i++) {
+        cout << i << ": " << tokens[i] << '\n';
+    }
+//    return 69;
     // try {
         for (int i = 0; i < sz; i++) {
+            cout << i << ": " << tokens[i] << '\n';
             if (tokens[i] == "(") {
                 operators.push(tokens[i]);
             } else if (tokens[i] == ")") {
@@ -195,7 +173,7 @@ double evalExpression(string strTokens) {
 
                     string opr = operators.top();
                     operators.pop();
-                    values.push(evalBinaryOp(fstVal, secVal, opr)); 
+                    values.push(evalBinaryOp(fstVal, secVal, opr));
                 }
 
                 if (!operators.empty()) {
@@ -241,7 +219,7 @@ double evalExpression(string strTokens) {
 
             string opr = operators.top();
             operators.pop();
-            values.push(evalBinaryOp(fstVal, secVal, opr)); 
+            values.push(evalBinaryOp(fstVal, secVal, opr));
         }
         if (values.size() != 1) {
             throw "Invalid mathematical expression";

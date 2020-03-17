@@ -16,19 +16,21 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    Calculator.cpp \
     Expression/AddExpression.cpp \
     Expression/Expression.cpp \
     Expression/NegativeExpression.cpp \
     Expression/SubstractExpression.cpp \
-    main.cpp \
-    calculator.cpp
+    Parser.cpp \
+    main.cpp
 
 HEADERS += \
+    Calculator.h \
     Expression/AddExpression.hpp \
     Expression/Expression.hpp \
     Expression/NegativeExpression.hpp \
     Expression/SubstractExpression.hpp \
-    calculator.h
+    Parser.h
 
 FORMS += \
     calculator.ui
