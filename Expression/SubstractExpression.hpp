@@ -5,7 +5,7 @@
 class SubstractExpression: public BinaryExpression {
 public:
     SubstractExpression(Expression *x, Expression *y);
-    int solve();
+    float solve();
 };
 
 #endif

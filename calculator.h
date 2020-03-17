@@ -17,7 +17,7 @@ class Calculator : public QMainWindow
 public:
     Calculator(QWidget *parent = nullptr);
     ~Calculator();
-    void ParseString();
+    void ParseString(string buffer, string* result);
     void AnsProcess();
     void Evaluate();
 

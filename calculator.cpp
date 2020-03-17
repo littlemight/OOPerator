@@ -153,12 +153,12 @@ void Calculator::AnsProcess()
 
 void Calculator::Evaluate()
 {
-//    QString QBuffer = ui->display->text();
-//    string buffer = QBuffer.toStdString();
-//    string result;
-//    ParseString(buffer, &result);
-//    QString QResult = QString::fromStdString(result);
-//    ui->display->setText();
+
+}
+
+void Calculator::ParseString(string buffer, string* result)
+{
+
 }
 
 void Calculator::on_clearBtn_clicked()

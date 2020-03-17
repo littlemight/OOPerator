@@ -5,7 +5,7 @@
 class NegativeExpression: public UnaryExpression {
 public:
     NegativeExpression(Expression *x);
-    int solve();
+    float solve();
 };
 
 #endif
