@@ -1,10 +1,10 @@
 #include "Expression.hpp"
 
-TerminalExpression::TerminalExpression(int x) {
+TerminalExpression::TerminalExpression(float x) {
     this->x = x;
 }
 
-int TerminalExpression::solve() {
+float TerminalExpression::solve() {
     return this->x;
 }
 
