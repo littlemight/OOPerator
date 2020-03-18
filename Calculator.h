@@ -28,6 +28,7 @@ private slots:
     void unaryOprClicked();
     void eqClicked();
     void clearClicked();
+    void decClicked();
 //    void on_digBtn1_clicked();
 //    void on_digBtn2_clicked();
 //    void on_digBtn3_clicked();

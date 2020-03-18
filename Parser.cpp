@@ -11,6 +11,8 @@ map<string, int> Parser::initPrc() {
     ret["-"] = 1;
     ret["*"] = 2;
     ret["-"] = 2;
+    ret["pow"] = 3;
+    ret["mod"] = 3;
     // everything else is 0
     return ret;
 }
@@ -21,6 +23,8 @@ set<string> Parser::initBinaryOps() {
     ret.insert("-");
     ret.insert("*");
     ret.insert("/");
+    ret.insert("pow");
+    ret.insert("mod");
     return ret;
 }
 
@@ -29,6 +33,7 @@ set<string> Parser::initUnaryOps() {
     ret.insert("sqrt");
     ret.insert("sin");
     ret.insert("cos");
+    ret.insert("tan");
     return ret;
 }
 
@@ -79,6 +84,26 @@ void Parser::splitTokens(string strTokens, vector<string> &tokens) {
     }
 }
 
+bool Parser::isValidNum(string s) {
+    int decCount = 0;
+    int sz = s.size();
+    for (int i = 0; i < sz; i++) {
+        if (!isdigit(s[i]) && s[i] != '.') {
+            return false;
+        }
+        if (s[i] == '.') {
+            if (i == 0) {
+                return false;
+            }
+            decCount++;
+            if (decCount > 1) {
+                return false;
+            }
+        }
+    }
+    return true;
+}
+
 bool Parser::isBinaryOp(string opr) {
     return binaryOps.find(opr) != binaryOps.end();
 }
@@ -125,6 +150,8 @@ double Parser::evalUnaryOp(double a, string unaryOp) {
         return sin(a * PI / 180);
     } else if (unaryOp == "cos") {
         return cos(a * PI / 180);
+    } else if (unaryOp == "tan") {
+        return tan(a * PI / 180);
     }
     // else if (unaryOp == "sqrt") {
     //     return sqrt(a);
@@ -137,8 +164,15 @@ double Parser::evalBinaryOp(double a, double b, string binaryOp) {
     if (binaryOp == "+") return a + b;
     else if (binaryOp == "-") return a - b;
     else if (binaryOp == "*") return a * b;
-    // else if (binaryOp == "/") return a / b;
-    return a / b;
+    else if (binaryOp == "/") return a / b;
+    else if (binaryOp == "pow") return pow(a, b);
+    else if (binaryOp == "mod") {
+        // harus di cek dulu dia integer atau ga, kalo ga integer ga bisa mod
+        // harus di cek juga dia di mod 0 atau bukan
+
+        // ini sementara asumsi a dan b integer dan b != 0
+        return (int)a % (int)b;
+    }
 }
 
 double Parser::evalExpression(string strTokens) {
@@ -185,12 +219,27 @@ double Parser::evalExpression(string strTokens) {
                 } else {
                     throw "Imbalanced Parantheses Sequence";
                 }
-            } else if (isdigit(tokens[i][0]) || (tokens[i][0] == '-' && tokens[i] != "-")) {
-                double val = stod(tokens[i]);
+            } else if (isdigit(tokens[i][0])||
+                       // (tokens[i][0] == '-' && tokens[i] != "-") ||
+                       ((i == 0 || (isBinaryOp(tokens[i - 1]) || tokens[i - 1] == "(")) && tokens[i] == "-" && i < sz - 1 && isdigit(tokens[i + 1][0]))
+                       ) {
+                double val;
+                if ((i == 0 || (isBinaryOp(tokens[i - 1]) || tokens[i - 1] == "(")) &&
+                        tokens[i] == "-" &&
+                        i < sz - 1 &&
+                        isdigit(tokens[i + 1][0])) {
+                    val = -stod(tokens[i + 1]);
+                    i++;
+                } else {
+                    val = stod(tokens[i]);
+                }
                 // cout << tokens[i] << " " << val << '\n';
                 values.push(val);
             } else if (isBinaryOp(tokens[i])) {
                 while (!operators.empty() && prc[operators.top()] >= prc[tokens[i]]) {
+                    if (values.size() < 2) {
+                        throw "Invalid Mathematical Operation";
+                    }
                     double secVal = values.top();
                     values.pop();
                     double fstVal = values.top();

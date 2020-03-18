@@ -25,6 +25,7 @@ public:
     Parser();
     ~Parser();
     static double evalExpression(string strTokens);
+    static bool isValidNum(string s);
     static bool isBinaryOp(string opr);
     static bool isUnaryOp(string opr);
 private:

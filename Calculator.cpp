@@ -7,6 +7,7 @@ Calculator::Calculator(QWidget *parent)
 {
     ui->setupUi(this);
     ui->display->setText(QString::number(0));
+    ui->errorLog->setText(QString::fromStdString("Bukan Kalkulator Scientific"));
     tokens = "";
     ans = 0;
 
@@ -28,11 +29,12 @@ Calculator::Calculator(QWidget *parent)
             connect(*it, SIGNAL(released()), this, SLOT(oprClicked()));
         } else if (txt == "=") {
             connect(*it, SIGNAL(released()), this, SLOT(eqClicked()));
-        } else if (txt == "CLEAR") {
+        } else if (txt == "AC") {
             connect(*it, SIGNAL(released()), this, SLOT(clearClicked()));
+        } else if (txt == ".") {
+            connect(*it, SIGNAL(released()), this, SLOT(decClicked()));
         }
     }
-
 }
 
 Calculator::~Calculator()
@@ -49,7 +51,7 @@ void Calculator::digClicked() {
         this->tokens += btnTxt.toStdString();
     } else {
         ui->display->setText(dspTxt + btnTxt);
-        if (!isdigit(this->tokens.back())) {
+        if (!isdigit(this->tokens.back()) && this->tokens.back() != '.') {
             this->tokens += " " + btnTxt.toStdString();
         } else {
             this->tokens += btnTxt.toStdString();
@@ -80,20 +82,20 @@ void Calculator::unaryOprClicked() {
         this->tokens += btnTxt.toStdString() + " " + "(";
     } else {
         ui->display->setText(dspTxt + btnTxt + QString::fromStdString("("));
-        this->tokens += " " + btnTxt.toStdString() + " " + " (";
+        this->tokens += " " + btnTxt.toStdString() + " " + "(";
     }
 }
 
 void Calculator::eqClicked() {
     try {
-        string txt = ui->display->text().toStdString();
         double answer = Parser::evalExpression(this->tokens);
-//        cout << answer << '\n';
-        ui->display->setText(QString::number(answer, 'g', 16));
+        this->ui->errorLog->setText(this->ui->display->text());
+        this->ui->display->setText(QString::number(answer, 'g', 16));
         this->tokens.clear();
         this->ans = answer;
     } catch (const char* e) {
-        cout << "Error: " << e << '\n';
+//        this->ui->errorLog->setText(QString::fromStdString(tokens));
+        this->ui->errorLog->setText(QString::fromStdString(e));
     }
 }
 
@@ -101,4 +103,19 @@ void Calculator::clearClicked() {
     this->ans = 0;
     this->tokens.clear();
     ui->display->setText(QString::number(0));
+    ui->errorLog->setText(QString::fromStdString("Bukan Kalkulator Scientific"));
+}
+
+void Calculator::decClicked() {
+    QString dspTxt = ui->display->text();
+    this->ui->display->setText(dspTxt + QString::fromStdString("."));
+    if (this->tokens.empty()) {
+        this->tokens += ".";
+    } else {
+        if (isdigit(this->tokens.back())) {
+            this->tokens += ".";
+        } else {
+            this->tokens += " .";
+        }
+    }
 }

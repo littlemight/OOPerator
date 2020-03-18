@@ -21,3 +21,15 @@ Udah dibikin, udh bisa ekspresi negatif, nested (dalam kurung dll gitu), contoh:
 ```
 
 Tinggal compile ExpressionEvaluator.cpp terus jalanin aja exe nya. Belum disambungin ke GUI
+
+# GUI
+ExpressionEvaluator yang lebih update udah kusambungin di GUI.
+Jadi yang belum itu:
+- Kelas Expression belum dimasukin ke GUI
+- Kelas Exception belum ada
+- Testing dengan ekspresi aneh-aneh (1 + sin (1 + cos(dan seterusnya)))
+- Unit testing (kayaknya pake googletest atau catch2)
+- di kalkulator udah bisa lihat error message. kalo kalkulatornya tiba2 berenti berarti kemungkinan infinite loop
+- Queue belum
+- Ans belum
+- TESTING TESTING TESTING!!!!
