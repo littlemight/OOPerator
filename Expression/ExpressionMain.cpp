@@ -6,10 +6,16 @@
 #include "DivideExpression.hpp"
 #include "MultiplyExpression.hpp"
 #include "ModExpression.hpp"
+#include "SinExpression.hpp"
+#include "CosExpression.hpp"
+#include "TanExpression.hpp"
+#include "PowExpression.hpp"
 
 using namespace std;
 
-// Cara compile : g++ parser.cpp SubstractExpression.cpp AddExpression.cpp Expression.cpp DivideExpression.cpp MultiplyExpression.cpp ModExpression.cpp
+// Cara compile : g++ parser.cpp SubstractExpression.cpp AddExpression.cpp 
+// Expression.cpp DivideExpression.cpp MultiplyExpression.cpp ModExpression.cpp
+// SinExpression.cpp CosExpression.cpp TanExpression.cpp PowExpression.cpp
 
 float StrToNum(string s){
     float result = 0; 
@@ -112,4 +118,12 @@ int main(){
     cout << "Case 3" << endl; Evaluate(buffer3, &value);
     cout << "Case 4" << endl; Evaluate(buffer4, &value);
     cout << "Case 5" << endl; Evaluate(buffer5, &value);
+    SinExpression* a1 = new SinExpression(new TerminalExpression(45));
+    cout << "sin45 "<< " = " << a1->solve() << endl;
+    CosExpression* a2 = new CosExpression(new TerminalExpression(45));
+    cout << "cos45 "<< " = " << a2->solve() << endl;
+    TanExpression* a3 = new TanExpression(new TerminalExpression(45));
+    cout << "tan45 "<< " = " << a3->solve() << endl;
+    PowExpression* a4 = new PowExpression(new TerminalExpression(2), new TerminalExpression(3));
+    cout << "2^3 "<< " = " << a4->solve() << endl;
 }

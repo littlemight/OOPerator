@@ -1,3 +1,6 @@
+// Expression.cpp
+// Implementation of Class Expression
+
 #include "Expression.hpp"
 
 TerminalExpression::TerminalExpression(float x) {
