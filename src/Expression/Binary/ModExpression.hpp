@@ -11,7 +11,7 @@ class ModExpression: public BinaryExpression {
 public:
     ModExpression(Expression *x, Expression *y);
     bool isBothInt();
-    float solve();
+    double solve();
 };
 
 #endif

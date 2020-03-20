@@ -1,9 +1,9 @@
 #include "TerminalExpression.hpp"
 
-TerminalExpression::TerminalExpression(float x) {
+TerminalExpression::TerminalExpression(double x) {
     this->x = x;
 }
 
-float TerminalExpression::solve() {
+double TerminalExpression::solve() {
     return this->x;
 }

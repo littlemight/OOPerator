@@ -7,7 +7,8 @@ class UnaryExpression : public Expression {
 protected:
     Expression* x;
 public:
+    static const double PI;
     UnaryExpression(Expression* x);
-    virtual float solve() = 0;
+    virtual double solve() = 0;
 };
 #endif

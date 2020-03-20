@@ -6,6 +6,6 @@
 PowExpression::PowExpression(Expression *x, Expression *y): BinaryExpression(x, y) {
 }
 
-float PowExpression::solve() {
+double PowExpression::solve() {
 	return pow((double) x->solve(), (double) y->solve());
 }

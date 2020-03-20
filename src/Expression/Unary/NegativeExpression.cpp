@@ -5,6 +5,7 @@
 
 NegativeExpression::NegativeExpression(Expression *x): UnaryExpression(x) {
 }
-float NegativeExpression::solve() {
+
+double NegativeExpression::solve() {
 	return -(x->solve());
 }

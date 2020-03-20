@@ -9,7 +9,7 @@
 class PowExpression: public BinaryExpression {
 public:
     PowExpression(Expression *x, Expression *y);
-    float solve();
+    double solve();
 };
 
 #endif

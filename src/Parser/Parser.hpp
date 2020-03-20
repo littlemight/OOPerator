@@ -9,18 +9,29 @@
 #include <sstream>
 #include <cmath>
 #include <iostream>
+#include "../Expression/Binary/AddExpression.hpp"
+#include "../Expression/Binary/SubstractExpression.hpp"
+#include "../Expression/Binary/MultiplyExpression.hpp"
+#include "../Expression/Binary/DivideExpression.hpp"
+#include "../Expression/Binary/ModExpression.hpp"
+#include "../Expression/Binary/PowExpression.hpp"
+#include "../Expression/Unary/NegativeExpression.hpp"
+#include "../Expression/Unary/SinExpression.hpp"
+#include "../Expression/Unary/CosExpression.hpp"
+#include "../Expression/Unary/TanExpression.hpp"
+#include "../Expression/Unary/SqrtExpression.hpp"
+#include "../Expression/TerminalExpression.hpp"
+
 using namespace std;
 
 class Parser
 {   
 private:
-    // string strTokens;
-    // vector<string> tokens;
-
     static void splitTokens(string strTokens, vector<string> &tokens);
     static bool isUnaryStmt(string stmt, double &val, string &unaryOp);
-    static double evalUnaryOp(double a, string unaryOp);
-    static double evalBinaryOp(double a, double b, string binaryOp);
+    static Expression* evalUnaryOp(Expression* a, string unaryOp);
+    static Expression* evalBinaryOp(Expression* a, Expression* b, string binaryOp);
+    static void evalStack(stack<Expression *> &values, stack<string> &operators);
 public:
     Parser();
     ~Parser();
@@ -35,7 +46,6 @@ private:
     static map<string, int> initPrc();
     static set<string> initBinaryOps();
     static set<string> initUnaryOps();
-    static const double PI;
 };
 
 #endif // PARSER_H

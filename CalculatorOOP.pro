@@ -25,6 +25,7 @@ SOURCES += \
     src/Expression/Unary/SinExpression.cpp \
     src/Expression/Unary/CosExpression.cpp \
     src/Expression/Unary/TanExpression.cpp \
+    src/Expression/Unary/SqrtExpression.cpp \
     src/Expression/Binary/BinaryExpression.cpp \
     src/Expression/Binary/AddExpression.cpp \
     src/Expression/Binary/SubstractExpression.cpp \
@@ -44,6 +45,7 @@ HEADERS += \
     src/Expression/Unary/SinExpression.hpp \
     src/Expression/Unary/CosExpression.hpp \
     src/Expression/Unary/TanExpression.hpp \
+    src/Expression/Unary/SqrtExpression.hpp \
     src/Expression/Binary/BinaryExpression.hpp \
     src/Expression/Binary/AddExpression.hpp \
     src/Expression/Binary/SubstractExpression.hpp \

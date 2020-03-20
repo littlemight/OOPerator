@@ -5,6 +5,7 @@
 
 TanExpression::TanExpression(Expression *x): UnaryExpression(x) {
 }
-float TanExpression::solve() {
+
+double TanExpression::solve() {
 	return tan(x->solve() * PI / 180);
 }

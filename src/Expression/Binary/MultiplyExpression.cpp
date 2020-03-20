@@ -6,6 +6,6 @@
 MultiplyExpression::MultiplyExpression(Expression *x, Expression *y): BinaryExpression(x, y) {
 }
 
-float MultiplyExpression::solve() {
+double MultiplyExpression::solve() {
 	return (x->solve() * y->solve());
 }

@@ -5,6 +5,7 @@
 
 CosExpression::CosExpression(Expression *x): UnaryExpression(x) {
 }
-float CosExpression::solve() {
+
+double CosExpression::solve() {
 	return cos(x->solve() * PI / 180);
 }

@@ -5,6 +5,7 @@
 
 SinExpression::SinExpression(Expression *x): UnaryExpression(x) {
 }
-float SinExpression::solve() {
+
+double SinExpression::solve() {
 	return sin(x->solve() * PI / 180);
 }

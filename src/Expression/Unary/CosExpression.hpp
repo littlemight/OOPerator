@@ -11,7 +11,7 @@
 class CosExpression: public UnaryExpression {
 public:
     CosExpression(Expression *x);
-    float solve();
+    double solve();
 };
 
 #endif

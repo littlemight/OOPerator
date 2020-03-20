@@ -6,6 +6,6 @@
 AddExpression::AddExpression(Expression *x, Expression *y): BinaryExpression(x, y) {
 }
 
-float AddExpression::solve() {
+double AddExpression::solve() {
 	return (x->solve() + y->solve());
 }

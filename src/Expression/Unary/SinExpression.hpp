@@ -11,7 +11,7 @@
 class SinExpression: public UnaryExpression {
 public:
     SinExpression(Expression *x);
-    float solve();
+    double solve();
 };
 
 #endif

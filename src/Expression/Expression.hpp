@@ -7,7 +7,7 @@
 class Expression {
 public:
     Expression();
-    virtual float solve() = 0;
+    virtual double solve() = 0;
 };
 
 #endif

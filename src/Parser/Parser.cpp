@@ -1,7 +1,6 @@
 #include "Parser.hpp"
 
-Parser::Parser()
-{
+Parser::Parser() {
 }
 
 map<string, int> Parser::initPrc() {
@@ -40,7 +39,6 @@ set<string> Parser::initUnaryOps() {
 map<string, int> Parser::prc = initPrc();
 set<string> Parser::binaryOps = initBinaryOps();
 set<string> Parser::unaryOps = initUnaryOps();
-const double Parser::PI = acos(-1);
 
 void Parser::splitTokens(string strTokens, vector<string> &tokens) {
     stringstream ss(strTokens);
@@ -145,34 +143,51 @@ bool Parser::isUnaryStmt(string stmt, double &val, string &unaryOp) {
     }
 }
 
-double Parser::evalUnaryOp(double a, string unaryOp) {
+Expression* Parser::evalUnaryOp(Expression* a, string unaryOp) {
+    Expression* ret;
     if (unaryOp == "sin") {
-        return sin(a * PI / 180);
+        ret = new SinExpression(a);
     } else if (unaryOp == "cos") {
-        return cos(a * PI / 180);
+        ret = new CosExpression(a);
     } else if (unaryOp == "tan") {
-        return tan(a * PI / 180);
+        ret = new TanExpression(a);
+    } else if (unaryOp == "sqrt") {
+        ret = new SqrtExpression(a);
     }
-    // else if (unaryOp == "sqrt") {
-    //     return sqrt(a);
-    // }
-    return sqrt(a);
+    return ret;
 }
 
-double Parser::evalBinaryOp(double a, double b, string binaryOp) {
+Expression* Parser::evalBinaryOp(Expression* a, Expression* b, string binaryOp) {
     // cout << "EVALUATING: " << a << ' ' << binaryOp << ' ' << b << '\n';
-    if (binaryOp == "+") return a + b;
-    else if (binaryOp == "-") return a - b;
-    else if (binaryOp == "*") return a * b;
-    else if (binaryOp == "/") return a / b;
-    else if (binaryOp == "pow") return pow(a, b);
-    else if (binaryOp == "mod") {
-        // harus di cek dulu dia integer atau ga, kalo ga integer ga bisa mod
-        // harus di cek juga dia di mod 0 atau bukan
-
-        // ini sementara asumsi a dan b integer dan b != 0
-        return (int)a % (int)b;
+    Expression* ret;
+    if (binaryOp == "+") {
+        ret = new AddExpression(a, b);
+    } else if (binaryOp == "-") {
+        ret = new SubstractExpression(a, b);
+    } else if (binaryOp == "*") {
+        ret = new MultiplyExpression(a, b);
+    } else if (binaryOp == "/") {
+        ret = new DivideExpression(a, b);
+    } else if (binaryOp == "pow") {
+        ret = new PowExpression(a, b);
+    } else if (binaryOp == "mod") {
+        ret = new ModExpression(a, b);
     }
+    return ret;
+}
+
+void Parser::evalStack(stack<Expression *> &values, stack<string> &operators) {
+    if (values.size() < 2) {
+        throw "Invalid Mathematical Operation";
+    }
+    Expression* secVal = values.top();
+    values.pop();
+    Expression* fstVal = values.top();
+    values.pop();
+
+    string opr = operators.top();
+    operators.pop();
+    values.push(evalBinaryOp(fstVal, secVal, opr));
 }
 
 double Parser::evalExpression(string strTokens) {
@@ -182,100 +197,73 @@ double Parser::evalExpression(string strTokens) {
     double tmp;
     string unaryOp;
 
-    stack<double> values;
+    stack<Expression *> values;
     stack<string> operators;
     int sz = tokens.size();
     cout << strTokens << '\n';
     for (int i = 0; i < sz; i++) {
         cout << i << ": " << tokens[i] << '\n';
     }
-//    return 69;
-    // try {
-        for (int i = 0; i < sz; i++) {
-            cout << i << ": " << tokens[i] << '\n';
-            if (tokens[i] == "(") {
-                operators.push(tokens[i]);
-            } else if (tokens[i] == ")") {
-                while (!operators.empty() && operators.top() != "(") {
-                    if (values.size() < 2) {
-                        throw "Invalid Mathematical Operation";
-                    }
-                    int secVal = values.top();
-                    values.pop();
-                    int fstVal = values.top();
-                    values.pop();
 
-                    string opr = operators.top();
-                    operators.pop();
-                    values.push(evalBinaryOp(fstVal, secVal, opr));
-                }
+    Expression* val;
+    for (int i = 0; i < sz; i++) {
+        cout << i << ": " << tokens[i] << '\n';
+        if (tokens[i] == "(") {
+            operators.push(tokens[i]);
+        } else if (tokens[i] == ")") {
+            while (!operators.empty() && operators.top() != "(") {
+                evalStack(values, operators);
+            }
 
-                if (!operators.empty()) {
-                    if (operators.top() != "(") {
-                        throw "Imbalanced Parantheses Sequence";
-                    } else {
-                        operators.pop();
-                    }
-                } else {
+            if (!operators.empty()) {
+                if (operators.top() != "(") {
                     throw "Imbalanced Parantheses Sequence";
+                } else {
+                    operators.pop();
                 }
-            } else if (isdigit(tokens[i][0])||
-                       // (tokens[i][0] == '-' && tokens[i] != "-") ||
-                       ((i == 0 || (isBinaryOp(tokens[i - 1]) || tokens[i - 1] == "(")) && tokens[i] == "-" && i < sz - 1 && isdigit(tokens[i + 1][0]))
-                       ) {
-                double val;
-                if ((i == 0 || (isBinaryOp(tokens[i - 1]) || tokens[i - 1] == "(")) &&
-                        tokens[i] == "-" &&
-                        i < sz - 1 &&
-                        isdigit(tokens[i + 1][0])) {
-                    val = -stod(tokens[i + 1]);
+            } else {
+                throw "Imbalanced Parantheses Sequence";
+            }
+        } else if (isdigit(tokens[i][0])||
+                   // (tokens[i][0] == '-' && tokens[i] != "-") ||
+                   ((i == 0 || (isBinaryOp(tokens[i - 1]) || tokens[i - 1] == "(")) && tokens[i] == "-" && i < sz - 1 && isdigit(tokens[i + 1][0]))
+                   ) {
+            if ((i == 0 || (isBinaryOp(tokens[i - 1]) || tokens[i - 1] == "(")) &&
+                    tokens[i] == "-" &&
+                    i < sz - 1 &&
+                    isdigit(tokens[i + 1][0])) {
+                if (isValidNum(tokens[i + 1])) {
+                    val = new NegativeExpression(new TerminalExpression(stod(tokens[i + 1])));
                     i++;
                 } else {
-                    val = stod(tokens[i]);
+                    throw "Invalid decimal point";
                 }
-                // cout << tokens[i] << " " << val << '\n';
-                values.push(val);
-            } else if (isBinaryOp(tokens[i])) {
-                while (!operators.empty() && prc[operators.top()] >= prc[tokens[i]]) {
-                    if (values.size() < 2) {
-                        throw "Invalid Mathematical Operation";
-                    }
-                    double secVal = values.top();
-                    values.pop();
-                    double fstVal = values.top();
-                    values.pop();
-
-                    string opr = operators.top();
-                    operators.pop();
-                    values.push(evalBinaryOp(fstVal, secVal, opr));
-                }
-                operators.push(tokens[i]);
-            } else if (isUnaryStmt(tokens[i], tmp, unaryOp)) {
-                values.push(evalUnaryOp(tmp, unaryOp));
             } else {
-                throw "Invalid Mathematical Expression";
+                if (isValidNum(tokens[i])) {
+                    val = new TerminalExpression(stod(tokens[i]));
+                } else {
+                    throw "Invalid decimal point";
+                }
             }
-        }
-
-        while (!operators.empty()) {
-            if (values.size() < 2) {
-                throw "Invalid Mathematical Operation";
+            values.push(val);
+        } else if (isBinaryOp(tokens[i])) {
+            while (!operators.empty() && prc[operators.top()] >= prc[tokens[i]]) {
+                evalStack(values, operators);
             }
-            double secVal = values.top();
-            values.pop();
-            double fstVal = values.top();
-            values.pop();
-
-            string opr = operators.top();
-            operators.pop();
-            values.push(evalBinaryOp(fstVal, secVal, opr));
-        }
-        if (values.size() != 1) {
-            throw "Invalid mathematical expression";
+            operators.push(tokens[i]);
+        } else if (isUnaryStmt(tokens[i], tmp, unaryOp)) {
+            values.push(evalUnaryOp(new TerminalExpression(tmp), unaryOp));
         } else {
-            return values.top();
+            throw "Invalid Mathematical Expression";
         }
-    // } catch (const char* e) {
-    //     throw e;
-    // }
+    }
+
+    while (!operators.empty()) {
+        evalStack(values, operators);
+    }
+    if (values.size() != 1) {
+        throw "Invalid mathematical expression";
+    } else {
+        return values.top()->solve();
+    }
 }

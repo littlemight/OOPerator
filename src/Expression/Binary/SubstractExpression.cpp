@@ -6,6 +6,6 @@
 SubstractExpression::SubstractExpression(Expression *x, Expression *y): BinaryExpression(x, y) {
 }
 
-float SubstractExpression::solve() {
+double SubstractExpression::solve() {
 	return (x->solve() - y->solve());
 }

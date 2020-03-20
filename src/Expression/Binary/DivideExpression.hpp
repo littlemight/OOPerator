@@ -8,7 +8,7 @@
 class DivideExpression: public BinaryExpression {
 public:
     DivideExpression(Expression *x, Expression *y);
-    float solve();
+    double solve();
 };
 
 #endif

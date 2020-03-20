@@ -17,9 +17,9 @@ using namespace std;
 // Expression.cpp DivideExpression.cpp MultiplyExpression.cpp ModExpression.cpp
 // SinExpression.cpp CosExpression.cpp TanExpression.cpp PowExpression.cpp
 
-float StrToNum(string s){
-    float result = 0; 
-    float afterComma = 0;
+double StrToNum(string s){
+    double result = 0; 
+    double afterComma = 0;
     bool comma = false;
     int countComma = 0;
     for (char c: s){
@@ -44,7 +44,7 @@ float StrToNum(string s){
     return result;
 }
 
-void ConvertString(string s, float *result){
+void ConvertString(string s, double *result){
     *result = StrToNum(s);
 }
 
@@ -56,7 +56,7 @@ bool IsNull(char c){
     return c == '\0';
 }
 
-void Evaluate(string buffer, float* finalVal){
+void Evaluate(string buffer, double* finalVal){
     string a1; string a2; char op;
     int i = 0;
     while(!IsOperator(buffer[i]) && !IsNull(buffer[i])){
@@ -71,7 +71,7 @@ void Evaluate(string buffer, float* finalVal){
     cout << buffer << endl;
     cout << a1 << endl;
     cout << a2 << endl;
-    float r1, r2;
+    double r1, r2;
     ConvertString(a1, &r1);
     ConvertString(a2, &r2);
     if (IsOperator(op)){
@@ -112,7 +112,7 @@ int main(){
     string buffer3 = "100+200.5";
     string buffer4 = "100-200.5";
     string buffer5 = "100%20";
-    float value;
+    double value;
     cout << "Case 1" << endl; Evaluate(buffer1, &value);
     cout << "Case 2" << endl; Evaluate(buffer2, &value);
     cout << "Case 3" << endl; Evaluate(buffer3, &value);

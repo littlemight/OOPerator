@@ -5,10 +5,10 @@
 
 class TerminalExpression : public Expression {
 protected:
-    float x;
+    double x;
 public:
-    TerminalExpression(float x);
-    float solve();
+    TerminalExpression(double x);
+    double solve();
 };
 
 #endif

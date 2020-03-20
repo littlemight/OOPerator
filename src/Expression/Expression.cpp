@@ -2,3 +2,6 @@
 // Implementation of Class Expression
 
 #include "Expression.hpp"
+
+Expression::Expression() {
+}

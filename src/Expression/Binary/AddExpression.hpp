@@ -8,7 +8,7 @@
 class AddExpression: public BinaryExpression {
 public:
     AddExpression(Expression *x, Expression *y);
-    float solve();
+    double solve();
 };
 
 #endif

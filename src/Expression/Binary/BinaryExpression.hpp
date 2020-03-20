@@ -9,7 +9,7 @@ protected:
     Expression* y;
 public:
     BinaryExpression(Expression* x, Expression* y);
-    virtual float solve() = 0;
+    virtual double solve() = 0;
 };
 
 #endif

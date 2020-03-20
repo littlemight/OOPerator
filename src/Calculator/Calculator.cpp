@@ -8,6 +8,7 @@ Calculator::Calculator(QWidget *parent)
     ui->setupUi(this);
     ui->display->setText(QString::number(0));
     ui->errorLog->setText(QString::fromStdString("Bukan Kalkulator Scientific"));
+    memo.clear();
     tokens = "";
     ans = 0;
 
@@ -33,6 +34,8 @@ Calculator::Calculator(QWidget *parent)
             connect(*it, SIGNAL(released()), this, SLOT(clearClicked()));
         } else if (txt == ".") {
             connect(*it, SIGNAL(released()), this, SLOT(decClicked()));
+        } else if (txt == "ans") {
+            connect(*it, SIGNAL(released()), this, SLOT(ansClicked()));
         }
     }
 }
@@ -102,20 +105,46 @@ void Calculator::eqClicked() {
 void Calculator::clearClicked() {
     this->ans = 0;
     this->tokens.clear();
+    // this->memory = {};
     ui->display->setText(QString::number(0));
     ui->errorLog->setText(QString::fromStdString("Bukan Kalkulator Scientific"));
 }
 
 void Calculator::decClicked() {
     QString dspTxt = ui->display->text();
-    this->ui->display->setText(dspTxt + QString::fromStdString("."));
     if (this->tokens.empty()) {
         this->tokens += ".";
+        this->ui->display->setText(QString::fromStdString("."));
     } else {
+        this->ui->display->setText(dspTxt + QString::fromStdString("."));
         if (isdigit(this->tokens.back())) {
             this->tokens += ".";
         } else {
             this->tokens += " .";
         }
     }
+}
+
+void Calculator::ansClicked() {
+    QString dspTxt = ui->display->text();
+    QString ansStr = QString::number(ans);
+    if (this->tokens.empty()) {
+        ui->display->setText(ansStr);
+        this->tokens += to_string(ans);
+    } else {
+        ui->display->setText(dspTxt + ansStr);
+        if (!isdigit(this->tokens.back()) && this->tokens.back() != '.') {
+            this->tokens += " " + to_string(ans);
+        } else {
+            this->tokens += to_string(ans);
+        }
+    }
+}
+
+void Calculator::mcClicked() {
+
+}
+
+void Calculator::mrClicked() {
+
 }
