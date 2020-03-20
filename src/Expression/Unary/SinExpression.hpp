@@ -3,7 +3,7 @@
 
 #ifndef _SIN_EXPRESSION_HPP_
 #define _SIN_EXPRESSION_HPP_
-#include "Expression.hpp"
+#include "UnaryExpression.hpp"
 #include <cmath>
 
 #define PI 3.14159265

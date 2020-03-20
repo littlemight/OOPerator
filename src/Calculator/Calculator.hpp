@@ -3,7 +3,7 @@
 
 #include <iostream>
 #include <QMainWindow>
-#include "Parser.h"
+#include "../Parser/Parser.hpp"
 
 using namespace std;
 

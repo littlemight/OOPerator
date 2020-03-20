@@ -16,24 +16,44 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
-    Calculator.cpp \
-    Expression/AddExpression.cpp \
-    Expression/Expression.cpp \
-    Expression/NegativeExpression.cpp \
-    Expression/SubstractExpression.cpp \
-    Parser.cpp \
-    main.cpp
+    src/Calculator/Calculator.cpp \
+    src/Parser/Parser.cpp \
+    src/Expression/Expression.cpp \
+    src/Expression/TerminalExpression.cpp \
+    src/Expression/Unary/UnaryExpression.cpp \
+    src/Expression/Unary/NegativeExpression.cpp \
+    src/Expression/Unary/SinExpression.cpp \
+    src/Expression/Unary/CosExpression.cpp \
+    src/Expression/Unary/TanExpression.cpp \
+    src/Expression/Binary/BinaryExpression.cpp \
+    src/Expression/Binary/AddExpression.cpp \
+    src/Expression/Binary/SubstractExpression.cpp \
+    src/Expression/Binary/MultiplyExpression.cpp \
+    src/Expression/Binary/DivideExpression.cpp \
+    src/Expression/Binary/ModExpression.cpp \
+    src/Expression/Binary/PowExpression.cpp \
+    src/main.cpp
 
 HEADERS += \
-    Calculator.h \
-    Expression/AddExpression.hpp \
-    Expression/Expression.hpp \
-    Expression/NegativeExpression.hpp \
-    Expression/SubstractExpression.hpp \
-    Parser.h
+    src/Calculator/Calculator.hpp \
+    src/Parser/Parser.hpp \
+    src/Expression/Expression.hpp \
+    src/Expression/TerminalExpression.hpp \
+    src/Expression/Unary/UnaryExpression.hpp \
+    src/Expression/Unary/NegativeExpression.hpp \
+    src/Expression/Unary/SinExpression.hpp \
+    src/Expression/Unary/CosExpression.hpp \
+    src/Expression/Unary/TanExpression.hpp \
+    src/Expression/Binary/BinaryExpression.hpp \
+    src/Expression/Binary/AddExpression.hpp \
+    src/Expression/Binary/SubstractExpression.hpp \
+    src/Expression/Binary/MultiplyExpression.hpp \
+    src/Expression/Binary/DivideExpression.hpp \
+    src/Expression/Binary/ModExpression.hpp \
+    src/Expression/Binary/PowExpression.hpp \
 
 FORMS += \
-    calculator.ui
+    src/Calculator/calculator.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

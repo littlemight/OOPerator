@@ -3,7 +3,7 @@
 
 #ifndef _SUBSTRACT_EXPRESSION_HPP_
 #define _SUBSTRACT_EXPRESSION_HPP_
-#include "Expression.hpp"
+#include "BinaryExpression.hpp"
 
 class SubstractExpression: public BinaryExpression {
 public:

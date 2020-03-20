@@ -3,7 +3,7 @@
 
 #ifndef _DIVIDE_EXPRESSION_HPP_
 #define _DIVIDE_EXPRESSION_HPP_
-#include "Expression.hpp"
+#include "BinaryExpression.hpp"
 
 class DivideExpression: public BinaryExpression {
 public:

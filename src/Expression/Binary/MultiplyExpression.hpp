@@ -3,7 +3,7 @@
 
 #ifndef _MULTIPLY_EXPRESSION_HPP_
 #define _MULTIPLY_EXPRESSION_HPP_
-#include "Expression.hpp"
+#include "BinaryExpression.hpp"
 
 class MultiplyExpression: public BinaryExpression {
 public:
