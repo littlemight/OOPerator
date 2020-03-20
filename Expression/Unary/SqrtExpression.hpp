@@ -4,6 +4,7 @@
 #ifndef _SQRT_EXPRESSION_HPP_
 #define _SQRT_EXPRESSION_HPP_
 #include "UnaryExpression.hpp"
+#include "../../Exception/NegativeSqrtException.hpp"
 #include <cmath>
 
 class SqrtExpression: public UnaryExpression {

@@ -16,46 +16,48 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
-    src/Calculator/Calculator.cpp \
-    src/Parser/Parser.cpp \
-    src/Expression/Expression.cpp \
-    src/Expression/TerminalExpression.cpp \
-    src/Expression/Unary/UnaryExpression.cpp \
-    src/Expression/Unary/NegativeExpression.cpp \
-    src/Expression/Unary/SinExpression.cpp \
-    src/Expression/Unary/CosExpression.cpp \
-    src/Expression/Unary/TanExpression.cpp \
-    src/Expression/Unary/SqrtExpression.cpp \
-    src/Expression/Binary/BinaryExpression.cpp \
-    src/Expression/Binary/AddExpression.cpp \
-    src/Expression/Binary/SubstractExpression.cpp \
-    src/Expression/Binary/MultiplyExpression.cpp \
-    src/Expression/Binary/DivideExpression.cpp \
-    src/Expression/Binary/ModExpression.cpp \
-    src/Expression/Binary/PowExpression.cpp \
-    src/main.cpp
+    Calculator/Calculator.cpp \
+    Parser/Parser.cpp \
+    Expression/Expression.cpp \
+    Expression/TerminalExpression.cpp \
+    Expression/Unary/UnaryExpression.cpp \
+    Expression/Unary/NegativeExpression.cpp \
+    Expression/Unary/SinExpression.cpp \
+    Expression/Unary/CosExpression.cpp \
+    Expression/Unary/TanExpression.cpp \
+    Expression/Unary/SqrtExpression.cpp \
+    Expression/Binary/BinaryExpression.cpp \
+    Expression/Binary/AddExpression.cpp \
+    Expression/Binary/SubstractExpression.cpp \
+    Expression/Binary/MultiplyExpression.cpp \
+    Expression/Binary/DivideExpression.cpp \
+    Expression/Binary/ModExpression.cpp \
+    Expression/Binary/PowExpression.cpp \
+    main.cpp
 
 HEADERS += \
-    src/Calculator/Calculator.hpp \
-    src/Parser/Parser.hpp \
-    src/Expression/Expression.hpp \
-    src/Expression/TerminalExpression.hpp \
-    src/Expression/Unary/UnaryExpression.hpp \
-    src/Expression/Unary/NegativeExpression.hpp \
-    src/Expression/Unary/SinExpression.hpp \
-    src/Expression/Unary/CosExpression.hpp \
-    src/Expression/Unary/TanExpression.hpp \
-    src/Expression/Unary/SqrtExpression.hpp \
-    src/Expression/Binary/BinaryExpression.hpp \
-    src/Expression/Binary/AddExpression.hpp \
-    src/Expression/Binary/SubstractExpression.hpp \
-    src/Expression/Binary/MultiplyExpression.hpp \
-    src/Expression/Binary/DivideExpression.hpp \
-    src/Expression/Binary/ModExpression.hpp \
-    src/Expression/Binary/PowExpression.hpp \
+    Calculator/Calculator.hpp \
+    Exception/BaseException.hpp \
+    Exception/NegativeSqrtException.hpp \
+    Parser/Parser.hpp \
+    Expression/Expression.hpp \
+    Expression/TerminalExpression.hpp \
+    Expression/Unary/UnaryExpression.hpp \
+    Expression/Unary/NegativeExpression.hpp \
+    Expression/Unary/SinExpression.hpp \
+    Expression/Unary/CosExpression.hpp \
+    Expression/Unary/TanExpression.hpp \
+    Expression/Unary/SqrtExpression.hpp \
+    Expression/Binary/BinaryExpression.hpp \
+    Expression/Binary/AddExpression.hpp \
+    Expression/Binary/SubstractExpression.hpp \
+    Expression/Binary/MultiplyExpression.hpp \
+    Expression/Binary/DivideExpression.hpp \
+    Expression/Binary/ModExpression.hpp \
+    Expression/Binary/PowExpression.hpp \
 
 FORMS += \
-    src/Calculator/calculator.ui
+    Calculator/calculator.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

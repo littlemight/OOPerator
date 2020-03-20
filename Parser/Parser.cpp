@@ -10,7 +10,7 @@ map<string, int> Parser::initPrc() {
     ret["-"] = 1;
     ret["*"] = 2;
     ret["-"] = 2;
-    ret["pow"] = 3;
+    ret["^"] = 3;
     ret["mod"] = 3;
     // everything else is 0
     return ret;
@@ -22,7 +22,7 @@ set<string> Parser::initBinaryOps() {
     ret.insert("-");
     ret.insert("*");
     ret.insert("/");
-    ret.insert("pow");
+    ret.insert("^");
     ret.insert("mod");
     return ret;
 }
@@ -168,7 +168,7 @@ Expression* Parser::evalBinaryOp(Expression* a, Expression* b, string binaryOp) 
         ret = new MultiplyExpression(a, b);
     } else if (binaryOp == "/") {
         ret = new DivideExpression(a, b);
-    } else if (binaryOp == "pow") {
+    } else if (binaryOp == "^") {
         ret = new PowExpression(a, b);
     } else if (binaryOp == "mod") {
         ret = new ModExpression(a, b);

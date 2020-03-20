@@ -9,7 +9,7 @@ Calculator::Calculator(QWidget *parent)
     ui->display->setText(QString::number(0));
     ui->errorLog->setText(QString::fromStdString("Bukan Kalkulator Scientific"));
     memo.clear();
-    tokens = "";
+    tokens.clear();
     ans = 0;
 
     // link the digit buttons to functions
@@ -101,13 +101,15 @@ void Calculator::eqClicked() {
     } catch (const char* e) {
 //        this->ui->errorLog->setText(QString::fromStdString(tokens));
         this->ui->errorLog->setText(QString::fromStdString(e));
+    } catch (BaseException* e) {
+        this->ui->errorLog->setText(QString::fromStdString(e->getMessage()));
     }
 }
 
 void Calculator::clearClicked() {
     this->ans = 0;
     this->tokens.clear();
-    // this->memory = {};
+    memo.clear();
     ui->display->setText(QString::number(0));
     ui->errorLog->setText(QString::fromStdString("Bukan Kalkulator Scientific"));
 }

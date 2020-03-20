@@ -16,8 +16,6 @@ bool ModExpression::isBothInt(){
 }
 
 double ModExpression::solve() {
-    double f1 = x->solve();
-    double f2 = y->solve();
     if (isBothInt()){
         int result = (int(x->solve()) % int(y->solve()));
         return result;
