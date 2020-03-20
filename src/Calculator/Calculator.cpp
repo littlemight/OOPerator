@@ -36,6 +36,8 @@ Calculator::Calculator(QWidget *parent)
             connect(*it, SIGNAL(released()), this, SLOT(decClicked()));
         } else if (txt == "ans") {
             connect(*it, SIGNAL(released()), this, SLOT(ansClicked()));
+        } else if (txt == "⌫") {
+            connect(*it, SIGNAL(released()), this, SLOT(delClicked()));
         }
     }
 }
@@ -147,4 +149,24 @@ void Calculator::mcClicked() {
 
 void Calculator::mrClicked() {
 
+}
+
+void Calculator::delClicked()
+{
+    QString dspTxt = ui->display->text();
+    if (!this->tokens.empty()){
+        if (dspTxt.length() == 1){
+            dspTxt = "0";
+            ui->display->setText(dspTxt);
+            this->tokens = "";
+        }
+        else {
+            dspTxt.chop(1);
+            while (this->tokens.back() == ' '){
+                this->tokens.pop_back();
+            }
+            this->tokens.pop_back();
+            ui->display->setText(dspTxt);
+        }
+    }
 }
