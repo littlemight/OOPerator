@@ -1,3 +1,6 @@
+// ModExpression.hpp
+// Header of Class MultiplyExpression
+
 #ifndef _MULTIPLY_EXPRESSION_HPP_
 #define _MULTIPLY_EXPRESSION_HPP_
 #include "Expression.hpp"
