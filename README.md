@@ -1,10 +1,12 @@
 # OOPerator
 ![hero](asset/hero.png)
+
 Calculator sederhana yang memanfaatkan konsep OOP dalam implementasinya.
 Proyek ini merupakan tugas besar mata kuliah IF2210-Pemrograman Berorientasi Objek 2019/2020.
 
 ## Overview
 ![overview](asset/overview_demo.gif)
+
 Kalkulator sayur ini memiliki fitur dasar kalkulator sayur pada umumnya
 * Perhitungan operasi biner (tambah, kurang, kali, bagi)
 * Perhitungan operasi uner (akar)
@@ -184,6 +186,7 @@ Berikut adalah struktur folder dari proyek ini ini
 
 ## Authors
 ![hero_overview](asset/contributing_135.gif)
+
 * **Faris Fadhilah** - *13518026*
 * **Michael Hans** - *13518056*
 * **Arya Beri Argya Rasidi** - *13518131*
