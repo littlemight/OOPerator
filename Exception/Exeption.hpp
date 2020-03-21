@@ -63,7 +63,6 @@ class ImbalanceParenthesis  : public BaseExeption{
 };
 class divideWithZero : public BaseExeption {
 	public :
-		
 		string printMasage(){
 			string ret = "tidak bisa membagi dengan angka 0";
 			return ret;
@@ -78,3 +77,25 @@ class NoParanthesisinSin : public BaseExeption{
 		} 
 
 };
+
+class NoParanthesisinCos : public BaseExeption{
+	public :
+		string printMasage(){
+			string ret = "fungsi Cos ini tidak memiliki kurung";
+			return ret;
+		} 
+
+};
+
+class NoParanthesisinTan : public BaseExeption{
+	public :
+		string printMasage(){
+			string ret = "fungsi Tan ini tidak memiliki kurung";
+			return ret;
+		} 
+
+};
+
+
+
+
