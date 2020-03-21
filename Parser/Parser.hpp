@@ -23,11 +23,33 @@
 
 using namespace std;
 
+/**
+ * @brief Class yang berisi method static. digunakan untuk mengevaluasi string yang berisi ekspresi matematika
+ */
 class Parser
 {   
 private:
+    /**
+     * @brief Memisahkan sebuah string yang berisi token-token menjadi vector of tokens
+     * @param strTokens String token yang dimasukkan
+     * @param tokens Vektor hasil pemisahan
+     */
     static void splitTokens(string strTokens, vector<string> &tokens);
+
+    /**
+     * @brief Memeriksa apakah sebuah string adalah ekspresi unary yang valid
+     * @param stmt
+     * @param val
+     * @param unaryOp
+     * @return
+     */
     static bool isUnaryStmt(string stmt, double &val, string &unaryOp);
+
+    /**
+     * @brief Mengambil dua nilai dari stack values dan satu operator dari stack operators, jika kondisi tidak terpenuhi, maka akan dilempar exception
+     * @param values
+     * @param operators
+     */
     static void evalStack(stack<Expression *> &values, stack<string> &operators);
     static Expression* evalUnaryOp(Expression* a, string unaryOp);
     static Expression* evalBinaryOp(Expression* a, Expression* b, string binaryOp);

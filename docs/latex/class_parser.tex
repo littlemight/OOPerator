@@ -1,0 +1,231 @@
+\hypertarget{class_parser}{}\doxysection{Parser Class Reference}
+\label{class_parser}\index{Parser@{Parser}}
+
+
+Class yang digunakan untuk mengevaluasi string yang berisi ekspresi matematika.  
+
+
+
+
+{\ttfamily \#include $<$Parser.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_parser_a12234f6cd36b61af4b50c94a179422c1}{Parser}} ()
+\item 
+\mbox{\hyperlink{class_parser_a3e658b5917a93a3ef648050d060e3a93}{$\sim$\+Parser}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static double \mbox{\hyperlink{class_parser_adff0aa2cfc0dd1c89813ef880fbb807a}{eval\+Unary\+Op}} (double a, string unary\+Op)
+\item 
+static double \mbox{\hyperlink{class_parser_a97637a951414d7e7dc16f28a4cea837e}{eval\+Binary\+Op}} (double a, double b, string binary\+Op)
+\item 
+static double \mbox{\hyperlink{class_parser_ac06df4c33f7b0191af409e35a5aab6ae}{eval\+Expression}} (string str\+Tokens)
+\item 
+static bool \mbox{\hyperlink{class_parser_abf68b5625a8bd1d231d025005a86787d}{is\+Valid\+Num}} (string s)
+\item 
+static bool \mbox{\hyperlink{class_parser_a5741dc4cd43152d458dcd0711cf33d3d}{is\+Binary\+Op}} (string opr)
+\item 
+static bool \mbox{\hyperlink{class_parser_ab48eb76878d91569df922b9f4e361e39}{is\+Unary\+Op}} (string opr)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{class_parser_abef93e75d591111c700f71e2566e41fa}{split\+Tokens}} (string str\+Tokens, vector$<$ string $>$ \&tokens)
+\begin{DoxyCompactList}\small\item\em Memisahkan sebuah string yang berisi token-\/token menjadi vector of tokens. \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{class_parser_a5307a60d5a2649b055468454a32e7e4f}{is\+Unary\+Stmt}} (string stmt, double \&val, string \&unary\+Op)
+\begin{DoxyCompactList}\small\item\em is\+Unary\+Stmt hehehe \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_parser_a5553d8a8c72c60f29bef17fce3a1eba9}{eval\+Stack}} (stack$<$ \mbox{\hyperlink{class_expression}{Expression}} $\ast$ $>$ \&values, stack$<$ string $>$ \&operators)
+\begin{DoxyCompactList}\small\item\em eval\+Stack \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{class_expression}{Expression}} $\ast$ \mbox{\hyperlink{class_parser_a031bded632cf8e22fd995a3ee030337e}{eval\+Unary\+Op}} (\mbox{\hyperlink{class_expression}{Expression}} $\ast$a, string unary\+Op)
+\item 
+static \mbox{\hyperlink{class_expression}{Expression}} $\ast$ \mbox{\hyperlink{class_parser_a15561e3bfa1e3231c3f7262aade32649}{eval\+Binary\+Op}} (\mbox{\hyperlink{class_expression}{Expression}} $\ast$a, \mbox{\hyperlink{class_expression}{Expression}} $\ast$b, string binary\+Op)
+\item 
+static map$<$ string, int $>$ \mbox{\hyperlink{class_parser_a546b5dba06b84628e7ae674373ac3be9}{init\+Prc}} ()
+\item 
+static set$<$ string $>$ \mbox{\hyperlink{class_parser_a2ff521caf747e0a0e7819ea5e363c6c1}{init\+Binary\+Ops}} ()
+\item 
+static set$<$ string $>$ \mbox{\hyperlink{class_parser_a8b62f47f1cf462af8ffe894bb75f85ac}{init\+Unary\+Ops}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static map$<$ string, int $>$ \mbox{\hyperlink{class_parser_a5a8ce3cbab9dbab3faa14303e1ab3c6d}{prc}} = \mbox{\hyperlink{class_parser_a546b5dba06b84628e7ae674373ac3be9}{init\+Prc}}()
+\item 
+static set$<$ string $>$ \mbox{\hyperlink{class_parser_a53d02399e768dc61b5b48f84296dcfa3}{binary\+Ops}} = \mbox{\hyperlink{class_parser_a2ff521caf747e0a0e7819ea5e363c6c1}{init\+Binary\+Ops}}()
+\item 
+static set$<$ string $>$ \mbox{\hyperlink{class_parser_a973952b67dcd6c4f6c26e5f21876c58c}{unary\+Ops}} = \mbox{\hyperlink{class_parser_a8b62f47f1cf462af8ffe894bb75f85ac}{init\+Unary\+Ops}}()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class yang digunakan untuk mengevaluasi string yang berisi ekspresi matematika. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_parser_a12234f6cd36b61af4b50c94a179422c1}\label{class_parser_a12234f6cd36b61af4b50c94a179422c1}} 
+\index{Parser@{Parser}!Parser@{Parser}}
+\index{Parser@{Parser}!Parser@{Parser}}
+\doxysubsubsection{\texorpdfstring{Parser()}{Parser()}}
+{\footnotesize\ttfamily Parser\+::\+Parser (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_parser_a3e658b5917a93a3ef648050d060e3a93}\label{class_parser_a3e658b5917a93a3ef648050d060e3a93}} 
+\index{Parser@{Parser}!````~Parser@{$\sim$Parser}}
+\index{````~Parser@{$\sim$Parser}!Parser@{Parser}}
+\doxysubsubsection{\texorpdfstring{$\sim$Parser()}{~Parser()}}
+{\footnotesize\ttfamily Parser\+::$\sim$\+Parser (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_parser_a97637a951414d7e7dc16f28a4cea837e}\label{class_parser_a97637a951414d7e7dc16f28a4cea837e}} 
+\index{Parser@{Parser}!evalBinaryOp@{evalBinaryOp}}
+\index{evalBinaryOp@{evalBinaryOp}!Parser@{Parser}}
+\doxysubsubsection{\texorpdfstring{evalBinaryOp()}{evalBinaryOp()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily double Parser\+::eval\+Binary\+Op (\begin{DoxyParamCaption}\item[{double}]{a,  }\item[{double}]{b,  }\item[{string}]{binary\+Op }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{class_parser_a15561e3bfa1e3231c3f7262aade32649}\label{class_parser_a15561e3bfa1e3231c3f7262aade32649}} 
+\index{Parser@{Parser}!evalBinaryOp@{evalBinaryOp}}
+\index{evalBinaryOp@{evalBinaryOp}!Parser@{Parser}}
+\doxysubsubsection{\texorpdfstring{evalBinaryOp()}{evalBinaryOp()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_expression}{Expression}} $\ast$ Parser\+::eval\+Binary\+Op (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_expression}{Expression}} $\ast$}]{a,  }\item[{\mbox{\hyperlink{class_expression}{Expression}} $\ast$}]{b,  }\item[{string}]{binary\+Op }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_parser_ac06df4c33f7b0191af409e35a5aab6ae}\label{class_parser_ac06df4c33f7b0191af409e35a5aab6ae}} 
+\index{Parser@{Parser}!evalExpression@{evalExpression}}
+\index{evalExpression@{evalExpression}!Parser@{Parser}}
+\doxysubsubsection{\texorpdfstring{evalExpression()}{evalExpression()}}
+{\footnotesize\ttfamily double Parser\+::eval\+Expression (\begin{DoxyParamCaption}\item[{string}]{str\+Tokens }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{class_parser_a5553d8a8c72c60f29bef17fce3a1eba9}\label{class_parser_a5553d8a8c72c60f29bef17fce3a1eba9}} 
+\index{Parser@{Parser}!evalStack@{evalStack}}
+\index{evalStack@{evalStack}!Parser@{Parser}}
+\doxysubsubsection{\texorpdfstring{evalStack()}{evalStack()}}
+{\footnotesize\ttfamily void Parser\+::eval\+Stack (\begin{DoxyParamCaption}\item[{stack$<$ \mbox{\hyperlink{class_expression}{Expression}} $\ast$ $>$ \&}]{values,  }\item[{stack$<$ string $>$ \&}]{operators }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+eval\+Stack 
+
+
+\begin{DoxyParams}{Parameters}
+{\em values} & \\
+\hline
+{\em operators} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_parser_adff0aa2cfc0dd1c89813ef880fbb807a}\label{class_parser_adff0aa2cfc0dd1c89813ef880fbb807a}} 
+\index{Parser@{Parser}!evalUnaryOp@{evalUnaryOp}}
+\index{evalUnaryOp@{evalUnaryOp}!Parser@{Parser}}
+\doxysubsubsection{\texorpdfstring{evalUnaryOp()}{evalUnaryOp()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily double Parser\+::eval\+Unary\+Op (\begin{DoxyParamCaption}\item[{double}]{a,  }\item[{string}]{unary\+Op }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{class_parser_a031bded632cf8e22fd995a3ee030337e}\label{class_parser_a031bded632cf8e22fd995a3ee030337e}} 
+\index{Parser@{Parser}!evalUnaryOp@{evalUnaryOp}}
+\index{evalUnaryOp@{evalUnaryOp}!Parser@{Parser}}
+\doxysubsubsection{\texorpdfstring{evalUnaryOp()}{evalUnaryOp()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_expression}{Expression}} $\ast$ Parser\+::eval\+Unary\+Op (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_expression}{Expression}} $\ast$}]{a,  }\item[{string}]{unary\+Op }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_parser_a2ff521caf747e0a0e7819ea5e363c6c1}\label{class_parser_a2ff521caf747e0a0e7819ea5e363c6c1}} 
+\index{Parser@{Parser}!initBinaryOps@{initBinaryOps}}
+\index{initBinaryOps@{initBinaryOps}!Parser@{Parser}}
+\doxysubsubsection{\texorpdfstring{initBinaryOps()}{initBinaryOps()}}
+{\footnotesize\ttfamily set$<$ string $>$ Parser\+::init\+Binary\+Ops (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_parser_a546b5dba06b84628e7ae674373ac3be9}\label{class_parser_a546b5dba06b84628e7ae674373ac3be9}} 
+\index{Parser@{Parser}!initPrc@{initPrc}}
+\index{initPrc@{initPrc}!Parser@{Parser}}
+\doxysubsubsection{\texorpdfstring{initPrc()}{initPrc()}}
+{\footnotesize\ttfamily map$<$ string, int $>$ Parser\+::init\+Prc (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_parser_a8b62f47f1cf462af8ffe894bb75f85ac}\label{class_parser_a8b62f47f1cf462af8ffe894bb75f85ac}} 
+\index{Parser@{Parser}!initUnaryOps@{initUnaryOps}}
+\index{initUnaryOps@{initUnaryOps}!Parser@{Parser}}
+\doxysubsubsection{\texorpdfstring{initUnaryOps()}{initUnaryOps()}}
+{\footnotesize\ttfamily set$<$ string $>$ Parser\+::init\+Unary\+Ops (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_parser_a5741dc4cd43152d458dcd0711cf33d3d}\label{class_parser_a5741dc4cd43152d458dcd0711cf33d3d}} 
+\index{Parser@{Parser}!isBinaryOp@{isBinaryOp}}
+\index{isBinaryOp@{isBinaryOp}!Parser@{Parser}}
+\doxysubsubsection{\texorpdfstring{isBinaryOp()}{isBinaryOp()}}
+{\footnotesize\ttfamily bool Parser\+::is\+Binary\+Op (\begin{DoxyParamCaption}\item[{string}]{opr }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{class_parser_ab48eb76878d91569df922b9f4e361e39}\label{class_parser_ab48eb76878d91569df922b9f4e361e39}} 
+\index{Parser@{Parser}!isUnaryOp@{isUnaryOp}}
+\index{isUnaryOp@{isUnaryOp}!Parser@{Parser}}
+\doxysubsubsection{\texorpdfstring{isUnaryOp()}{isUnaryOp()}}
+{\footnotesize\ttfamily bool Parser\+::is\+Unary\+Op (\begin{DoxyParamCaption}\item[{string}]{opr }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{class_parser_a5307a60d5a2649b055468454a32e7e4f}\label{class_parser_a5307a60d5a2649b055468454a32e7e4f}} 
+\index{Parser@{Parser}!isUnaryStmt@{isUnaryStmt}}
+\index{isUnaryStmt@{isUnaryStmt}!Parser@{Parser}}
+\doxysubsubsection{\texorpdfstring{isUnaryStmt()}{isUnaryStmt()}}
+{\footnotesize\ttfamily bool Parser\+::is\+Unary\+Stmt (\begin{DoxyParamCaption}\item[{string}]{stmt,  }\item[{double \&}]{val,  }\item[{string \&}]{unary\+Op }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+is\+Unary\+Stmt hehehe 
+
+
+\begin{DoxyParams}{Parameters}
+{\em stmt} & \\
+\hline
+{\em val} & \\
+\hline
+{\em unary\+Op} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_parser_abf68b5625a8bd1d231d025005a86787d}\label{class_parser_abf68b5625a8bd1d231d025005a86787d}} 
+\index{Parser@{Parser}!isValidNum@{isValidNum}}
+\index{isValidNum@{isValidNum}!Parser@{Parser}}
+\doxysubsubsection{\texorpdfstring{isValidNum()}{isValidNum()}}
+{\footnotesize\ttfamily bool Parser\+::is\+Valid\+Num (\begin{DoxyParamCaption}\item[{string}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{class_parser_abef93e75d591111c700f71e2566e41fa}\label{class_parser_abef93e75d591111c700f71e2566e41fa}} 
+\index{Parser@{Parser}!splitTokens@{splitTokens}}
+\index{splitTokens@{splitTokens}!Parser@{Parser}}
+\doxysubsubsection{\texorpdfstring{splitTokens()}{splitTokens()}}
+{\footnotesize\ttfamily void Parser\+::split\+Tokens (\begin{DoxyParamCaption}\item[{string}]{str\+Tokens,  }\item[{vector$<$ string $>$ \&}]{tokens }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Memisahkan sebuah string yang berisi token-\/token menjadi vector of tokens. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em str\+Tokens} & String token yang dimasukkan \\
+\hline
+{\em tokens} & Vektor hasil pemisahan \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_parser_a53d02399e768dc61b5b48f84296dcfa3}\label{class_parser_a53d02399e768dc61b5b48f84296dcfa3}} 
+\index{Parser@{Parser}!binaryOps@{binaryOps}}
+\index{binaryOps@{binaryOps}!Parser@{Parser}}
+\doxysubsubsection{\texorpdfstring{binaryOps}{binaryOps}}
+{\footnotesize\ttfamily set$<$ string $>$ Parser\+::binary\+Ops = \mbox{\hyperlink{class_parser_a2ff521caf747e0a0e7819ea5e363c6c1}{init\+Binary\+Ops}}()\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_parser_a5a8ce3cbab9dbab3faa14303e1ab3c6d}\label{class_parser_a5a8ce3cbab9dbab3faa14303e1ab3c6d}} 
+\index{Parser@{Parser}!prc@{prc}}
+\index{prc@{prc}!Parser@{Parser}}
+\doxysubsubsection{\texorpdfstring{prc}{prc}}
+{\footnotesize\ttfamily map$<$ string, int $>$ Parser\+::prc = \mbox{\hyperlink{class_parser_a546b5dba06b84628e7ae674373ac3be9}{init\+Prc}}()\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_parser_a973952b67dcd6c4f6c26e5f21876c58c}\label{class_parser_a973952b67dcd6c4f6c26e5f21876c58c}} 
+\index{Parser@{Parser}!unaryOps@{unaryOps}}
+\index{unaryOps@{unaryOps}!Parser@{Parser}}
+\doxysubsubsection{\texorpdfstring{unaryOps}{unaryOps}}
+{\footnotesize\ttfamily set$<$ string $>$ Parser\+::unary\+Ops = \mbox{\hyperlink{class_parser_a8b62f47f1cf462af8ffe894bb75f85ac}{init\+Unary\+Ops}}()\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Parser/\mbox{\hyperlink{_parser_8hpp}{Parser.\+hpp}}\item 
+Parser/\mbox{\hyperlink{_parser_8cpp}{Parser.\+cpp}}\end{DoxyCompactItemize}
