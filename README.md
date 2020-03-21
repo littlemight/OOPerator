@@ -96,7 +96,6 @@ Berikut adalah struktur folder dari proyek ini ini
 +---docs
 |   +---html
 |   +---latex
-|   config
 |
 \---src
     |   main.cpp
