@@ -51,24 +51,24 @@ OBJECTS_DIR   = .
 
 ####### Files
 
-SOURCES       = src\Calculator\Calculator.cpp \
-		src\Parser\Parser.cpp \
-		src\Expression\Expression.cpp \
-		src\Expression\TerminalExpression.cpp \
-		src\Expression\Unary\UnaryExpression.cpp \
-		src\Expression\Unary\NegativeExpression.cpp \
-		src\Expression\Unary\SinExpression.cpp \
-		src\Expression\Unary\CosExpression.cpp \
-		src\Expression\Unary\TanExpression.cpp \
-		src\Expression\Unary\SqrtExpression.cpp \
-		src\Expression\Binary\BinaryExpression.cpp \
-		src\Expression\Binary\AddExpression.cpp \
-		src\Expression\Binary\SubstractExpression.cpp \
-		src\Expression\Binary\MultiplyExpression.cpp \
-		src\Expression\Binary\DivideExpression.cpp \
-		src\Expression\Binary\ModExpression.cpp \
-		src\Expression\Binary\PowExpression.cpp \
-		src\main.cpp moc_Calculator.cpp
+SOURCES       = Calculator\Calculator.cpp \
+		Parser\Parser.cpp \
+		Expression\Expression.cpp \
+		Expression\TerminalExpression.cpp \
+		Expression\Unary\UnaryExpression.cpp \
+		Expression\Unary\NegativeExpression.cpp \
+		Expression\Unary\SinExpression.cpp \
+		Expression\Unary\CosExpression.cpp \
+		Expression\Unary\TanExpression.cpp \
+		Expression\Unary\SqrtExpression.cpp \
+		Expression\Binary\BinaryExpression.cpp \
+		Expression\Binary\AddExpression.cpp \
+		Expression\Binary\SubstractExpression.cpp \
+		Expression\Binary\MultiplyExpression.cpp \
+		Expression\Binary\DivideExpression.cpp \
+		Expression\Binary\ModExpression.cpp \
+		Expression\Binary\PowExpression.cpp \
+		main.cpp moc_Calculator.cpp
 OBJECTS       = Calculator.o \
 		Parser.o \
 		Expression.o \
@@ -89,40 +89,42 @@ OBJECTS       = Calculator.o \
 		main.o \
 		moc_Calculator.o
 
-DIST          = README.md src\Calculator\Calculator.hpp \
-		src\Parser\Parser.hpp \
-		src\Expression\Expression.hpp \
-		src\Expression\TerminalExpression.hpp \
-		src\Expression\Unary\UnaryExpression.hpp \
-		src\Expression\Unary\NegativeExpression.hpp \
-		src\Expression\Unary\SinExpression.hpp \
-		src\Expression\Unary\CosExpression.hpp \
-		src\Expression\Unary\TanExpression.hpp \
-		src\Expression\Unary\SqrtExpression.hpp \
-		src\Expression\Binary\BinaryExpression.hpp \
-		src\Expression\Binary\AddExpression.hpp \
-		src\Expression\Binary\SubstractExpression.hpp \
-		src\Expression\Binary\MultiplyExpression.hpp \
-		src\Expression\Binary\DivideExpression.hpp \
-		src\Expression\Binary\ModExpression.hpp \
-		src\Expression\Binary\PowExpression.hpp src\Calculator\Calculator.cpp \
-		src\Parser\Parser.cpp \
-		src\Expression\Expression.cpp \
-		src\Expression\TerminalExpression.cpp \
-		src\Expression\Unary\UnaryExpression.cpp \
-		src\Expression\Unary\NegativeExpression.cpp \
-		src\Expression\Unary\SinExpression.cpp \
-		src\Expression\Unary\CosExpression.cpp \
-		src\Expression\Unary\TanExpression.cpp \
-		src\Expression\Unary\SqrtExpression.cpp \
-		src\Expression\Binary\BinaryExpression.cpp \
-		src\Expression\Binary\AddExpression.cpp \
-		src\Expression\Binary\SubstractExpression.cpp \
-		src\Expression\Binary\MultiplyExpression.cpp \
-		src\Expression\Binary\DivideExpression.cpp \
-		src\Expression\Binary\ModExpression.cpp \
-		src\Expression\Binary\PowExpression.cpp \
-		src\main.cpp
+DIST          = README.md Calculator\Calculator.hpp \
+		Exception\BaseException.hpp \
+		Exception\NegativeSqrtException.hpp \
+		Parser\Parser.hpp \
+		Expression\Expression.hpp \
+		Expression\TerminalExpression.hpp \
+		Expression\Unary\UnaryExpression.hpp \
+		Expression\Unary\NegativeExpression.hpp \
+		Expression\Unary\SinExpression.hpp \
+		Expression\Unary\CosExpression.hpp \
+		Expression\Unary\TanExpression.hpp \
+		Expression\Unary\SqrtExpression.hpp \
+		Expression\Binary\BinaryExpression.hpp \
+		Expression\Binary\AddExpression.hpp \
+		Expression\Binary\SubstractExpression.hpp \
+		Expression\Binary\MultiplyExpression.hpp \
+		Expression\Binary\DivideExpression.hpp \
+		Expression\Binary\ModExpression.hpp \
+		Expression\Binary\PowExpression.hpp Calculator\Calculator.cpp \
+		Parser\Parser.cpp \
+		Expression\Expression.cpp \
+		Expression\TerminalExpression.cpp \
+		Expression\Unary\UnaryExpression.cpp \
+		Expression\Unary\NegativeExpression.cpp \
+		Expression\Unary\SinExpression.cpp \
+		Expression\Unary\CosExpression.cpp \
+		Expression\Unary\TanExpression.cpp \
+		Expression\Unary\SqrtExpression.cpp \
+		Expression\Binary\BinaryExpression.cpp \
+		Expression\Binary\AddExpression.cpp \
+		Expression\Binary\SubstractExpression.cpp \
+		Expression\Binary\MultiplyExpression.cpp \
+		Expression\Binary\DivideExpression.cpp \
+		Expression\Binary\ModExpression.cpp \
+		Expression\Binary\PowExpression.cpp \
+		main.cpp
 QMAKE_TARGET  = CalculatorOOP
 DESTDIR        =  #avoid trailing-slash linebreak
 TARGET         = CalculatorOOP.exe
@@ -288,6 +290,7 @@ Makefile: CalculatorOOP.pro C:/Qt/5.14.1/mingw73_64/mkspecs/win32-g++/qmake.conf
 		C:/Qt/5.14.1/mingw73_64/mkspecs/features/qt_config.prf \
 		C:/Qt/5.14.1/mingw73_64/mkspecs/win32-g++/qmake.conf \
 		C:/Qt/5.14.1/mingw73_64/mkspecs/features/spec_post.prf \
+		.qmake.stash \
 		C:/Qt/5.14.1/mingw73_64/mkspecs/features/exclusive_builds.prf \
 		C:/Qt/5.14.1/mingw73_64/mkspecs/features/toolchain.prf \
 		C:/Qt/5.14.1/mingw73_64/mkspecs/features/default_pre.prf \
@@ -468,6 +471,7 @@ C:/Qt/5.14.1/mingw73_64/mkspecs/features/qt_functions.prf:
 C:/Qt/5.14.1/mingw73_64/mkspecs/features/qt_config.prf:
 C:/Qt/5.14.1/mingw73_64/mkspecs/win32-g++/qmake.conf:
 C:/Qt/5.14.1/mingw73_64/mkspecs/features/spec_post.prf:
+.qmake.stash:
 C:/Qt/5.14.1/mingw73_64/mkspecs/features/exclusive_builds.prf:
 C:/Qt/5.14.1/mingw73_64/mkspecs/features/toolchain.prf:
 C:/Qt/5.14.1/mingw73_64/mkspecs/features/default_pre.prf:
@@ -501,7 +505,7 @@ qmake: FORCE
 qmake_all: FORCE
 
 dist:
-	$(ZIP) CalculatorOOP.zip $(SOURCES) $(DIST) CalculatorOOP.pro C:\Qt\5.14.1\mingw73_64\mkspecs\features\spec_pre.prf C:\Qt\5.14.1\mingw73_64\mkspecs\qdevice.pri C:\Qt\5.14.1\mingw73_64\mkspecs\features\device_config.prf C:\Qt\5.14.1\mingw73_64\mkspecs\common\sanitize.conf C:\Qt\5.14.1\mingw73_64\mkspecs\common\gcc-base.conf C:\Qt\5.14.1\mingw73_64\mkspecs\common\g++-base.conf C:\Qt\5.14.1\mingw73_64\mkspecs\common\angle.conf C:\Qt\5.14.1\mingw73_64\mkspecs\features\win32\windows_vulkan_sdk.prf C:\Qt\5.14.1\mingw73_64\mkspecs\common\windows-vulkan.conf C:\Qt\5.14.1\mingw73_64\mkspecs\common\g++-win32.conf C:\Qt\5.14.1\mingw73_64\mkspecs\common\windows-desktop.conf C:\Qt\5.14.1\mingw73_64\mkspecs\qconfig.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_3danimation.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_3danimation_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_3dcore.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_3dcore_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_3dextras.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_3dextras_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_3dinput.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_3dinput_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_3dlogic.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_3dlogic_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_3dquick.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_3dquick_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_3dquickanimation.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_3dquickanimation_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_3dquickextras.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_3dquickextras_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_3dquickinput.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_3dquickinput_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_3dquickrender.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_3dquickrender_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_3dquickscene2d.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_3dquickscene2d_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_3drender.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_3drender_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_accessibility_support_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_axbase.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_axbase_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_axcontainer.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_axcontainer_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_axserver.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_axserver_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_bluetooth.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_bluetooth_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_bootstrap_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_concurrent.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_concurrent_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_core.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_core_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_dbus.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_dbus_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_designer.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_designer_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_designercomponents_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_devicediscovery_support_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_edid_support_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_egl_support_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_eventdispatcher_support_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_fb_support_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_fontdatabase_support_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_gamepad.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_gamepad_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_gui.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_gui_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_help.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_help_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_location.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_location_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_multimedia.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_multimedia_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_multimediawidgets.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_multimediawidgets_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_network.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_network_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_nfc.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_nfc_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_opengl.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_opengl_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_openglextensions.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_openglextensions_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_packetprotocol_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_platformcompositor_support_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_positioning.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_positioning_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_positioningquick.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_positioningquick_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_printsupport.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_printsupport_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_qml.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_qml_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_qmldebug_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_qmldevtools_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_qmlmodels.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_qmlmodels_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_qmltest.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_qmltest_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_qmlworkerscript.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_qmlworkerscript_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_qtmultimediaquicktools_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_quick.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_quick_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_quickcontrols2.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_quickcontrols2_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_quickparticles_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_quickshapes_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_quicktemplates2.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_quicktemplates2_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_quickwidgets.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_quickwidgets_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_remoteobjects.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_remoteobjects_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_repparser.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_repparser_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_scxml.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_scxml_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_sensors.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_sensors_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_serialbus.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_serialbus_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_serialport.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_serialport_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_sql.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_sql_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_svg.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_svg_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_testlib.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_testlib_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_texttospeech.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_texttospeech_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_theme_support_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_uiplugin.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_uitools.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_uitools_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_vulkan_support_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_webchannel.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_webchannel_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_websockets.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_websockets_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_widgets.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_widgets_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_windowsuiautomation_support_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_winextras.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_winextras_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_xml.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_xml_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_xmlpatterns.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_xmlpatterns_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\features\qt_functions.prf C:\Qt\5.14.1\mingw73_64\mkspecs\features\qt_config.prf C:\Qt\5.14.1\mingw73_64\mkspecs\win32-g++\qmake.conf C:\Qt\5.14.1\mingw73_64\mkspecs\features\spec_post.prf C:\Qt\5.14.1\mingw73_64\mkspecs\features\exclusive_builds.prf C:\Qt\5.14.1\mingw73_64\mkspecs\features\toolchain.prf C:\Qt\5.14.1\mingw73_64\mkspecs\features\default_pre.prf C:\Qt\5.14.1\mingw73_64\mkspecs\features\win32\default_pre.prf C:\Qt\5.14.1\mingw73_64\mkspecs\features\resolve_config.prf C:\Qt\5.14.1\mingw73_64\mkspecs\features\default_post.prf C:\Qt\5.14.1\mingw73_64\mkspecs\features\qml_debug.prf C:\Qt\5.14.1\mingw73_64\mkspecs\features\precompile_header.prf C:\Qt\5.14.1\mingw73_64\mkspecs\features\warn_on.prf C:\Qt\5.14.1\mingw73_64\mkspecs\features\qt.prf C:\Qt\5.14.1\mingw73_64\mkspecs\features\resources_functions.prf C:\Qt\5.14.1\mingw73_64\mkspecs\features\resources.prf C:\Qt\5.14.1\mingw73_64\mkspecs\features\moc.prf C:\Qt\5.14.1\mingw73_64\mkspecs\features\win32\opengl.prf C:\Qt\5.14.1\mingw73_64\mkspecs\features\uic.prf C:\Qt\5.14.1\mingw73_64\mkspecs\features\qmake_use.prf C:\Qt\5.14.1\mingw73_64\mkspecs\features\file_copies.prf C:\Qt\5.14.1\mingw73_64\mkspecs\features\win32\windows.prf C:\Qt\5.14.1\mingw73_64\mkspecs\features\testcase_targets.prf C:\Qt\5.14.1\mingw73_64\mkspecs\features\exceptions.prf C:\Qt\5.14.1\mingw73_64\mkspecs\features\yacc.prf C:\Qt\5.14.1\mingw73_64\mkspecs\features\lex.prf CalculatorOOP.pro C:\Qt\5.14.1\mingw73_64\lib\Qt5Widgets.prl C:\Qt\5.14.1\mingw73_64\lib\Qt5Gui.prl C:\Qt\5.14.1\mingw73_64\lib\Qt5Core.prl C:\Qt\5.14.1\mingw73_64\lib\qtmain.prl    C:\Qt\5.14.1\mingw73_64\mkspecs\features\data\dummy.cpp src\Calculator\Calculator.hpp src\Parser\Parser.hpp src\Expression\Expression.hpp src\Expression\TerminalExpression.hpp src\Expression\Unary\UnaryExpression.hpp src\Expression\Unary\NegativeExpression.hpp src\Expression\Unary\SinExpression.hpp src\Expression\Unary\CosExpression.hpp src\Expression\Unary\TanExpression.hpp src\Expression\Unary\SqrtExpression.hpp src\Expression\Binary\BinaryExpression.hpp src\Expression\Binary\AddExpression.hpp src\Expression\Binary\SubstractExpression.hpp src\Expression\Binary\MultiplyExpression.hpp src\Expression\Binary\DivideExpression.hpp src\Expression\Binary\ModExpression.hpp src\Expression\Binary\PowExpression.hpp  src\Calculator\Calculator.cpp src\Parser\Parser.cpp src\Expression\Expression.cpp src\Expression\TerminalExpression.cpp src\Expression\Unary\UnaryExpression.cpp src\Expression\Unary\NegativeExpression.cpp src\Expression\Unary\SinExpression.cpp src\Expression\Unary\CosExpression.cpp src\Expression\Unary\TanExpression.cpp src\Expression\Unary\SqrtExpression.cpp src\Expression\Binary\BinaryExpression.cpp src\Expression\Binary\AddExpression.cpp src\Expression\Binary\SubstractExpression.cpp src\Expression\Binary\MultiplyExpression.cpp src\Expression\Binary\DivideExpression.cpp src\Expression\Binary\ModExpression.cpp src\Expression\Binary\PowExpression.cpp src\main.cpp src\Calculator\calculator.ui    
+	$(ZIP) CalculatorOOP.zip $(SOURCES) $(DIST) CalculatorOOP.pro C:\Qt\5.14.1\mingw73_64\mkspecs\features\spec_pre.prf C:\Qt\5.14.1\mingw73_64\mkspecs\qdevice.pri C:\Qt\5.14.1\mingw73_64\mkspecs\features\device_config.prf C:\Qt\5.14.1\mingw73_64\mkspecs\common\sanitize.conf C:\Qt\5.14.1\mingw73_64\mkspecs\common\gcc-base.conf C:\Qt\5.14.1\mingw73_64\mkspecs\common\g++-base.conf C:\Qt\5.14.1\mingw73_64\mkspecs\common\angle.conf C:\Qt\5.14.1\mingw73_64\mkspecs\features\win32\windows_vulkan_sdk.prf C:\Qt\5.14.1\mingw73_64\mkspecs\common\windows-vulkan.conf C:\Qt\5.14.1\mingw73_64\mkspecs\common\g++-win32.conf C:\Qt\5.14.1\mingw73_64\mkspecs\common\windows-desktop.conf C:\Qt\5.14.1\mingw73_64\mkspecs\qconfig.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_3danimation.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_3danimation_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_3dcore.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_3dcore_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_3dextras.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_3dextras_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_3dinput.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_3dinput_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_3dlogic.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_3dlogic_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_3dquick.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_3dquick_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_3dquickanimation.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_3dquickanimation_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_3dquickextras.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_3dquickextras_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_3dquickinput.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_3dquickinput_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_3dquickrender.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_3dquickrender_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_3dquickscene2d.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_3dquickscene2d_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_3drender.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_3drender_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_accessibility_support_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_axbase.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_axbase_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_axcontainer.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_axcontainer_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_axserver.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_axserver_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_bluetooth.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_bluetooth_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_bootstrap_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_concurrent.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_concurrent_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_core.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_core_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_dbus.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_dbus_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_designer.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_designer_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_designercomponents_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_devicediscovery_support_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_edid_support_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_egl_support_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_eventdispatcher_support_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_fb_support_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_fontdatabase_support_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_gamepad.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_gamepad_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_gui.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_gui_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_help.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_help_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_location.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_location_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_multimedia.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_multimedia_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_multimediawidgets.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_multimediawidgets_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_network.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_network_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_nfc.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_nfc_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_opengl.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_opengl_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_openglextensions.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_openglextensions_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_packetprotocol_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_platformcompositor_support_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_positioning.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_positioning_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_positioningquick.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_positioningquick_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_printsupport.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_printsupport_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_qml.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_qml_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_qmldebug_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_qmldevtools_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_qmlmodels.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_qmlmodels_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_qmltest.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_qmltest_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_qmlworkerscript.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_qmlworkerscript_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_qtmultimediaquicktools_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_quick.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_quick_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_quickcontrols2.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_quickcontrols2_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_quickparticles_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_quickshapes_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_quicktemplates2.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_quicktemplates2_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_quickwidgets.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_quickwidgets_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_remoteobjects.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_remoteobjects_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_repparser.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_repparser_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_scxml.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_scxml_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_sensors.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_sensors_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_serialbus.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_serialbus_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_serialport.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_serialport_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_sql.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_sql_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_svg.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_svg_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_testlib.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_testlib_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_texttospeech.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_texttospeech_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_theme_support_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_uiplugin.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_uitools.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_uitools_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_vulkan_support_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_webchannel.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_webchannel_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_websockets.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_websockets_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_widgets.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_widgets_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_windowsuiautomation_support_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_winextras.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_winextras_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_xml.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_xml_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_xmlpatterns.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_xmlpatterns_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\features\qt_functions.prf C:\Qt\5.14.1\mingw73_64\mkspecs\features\qt_config.prf C:\Qt\5.14.1\mingw73_64\mkspecs\win32-g++\qmake.conf C:\Qt\5.14.1\mingw73_64\mkspecs\features\spec_post.prf .qmake.stash C:\Qt\5.14.1\mingw73_64\mkspecs\features\exclusive_builds.prf C:\Qt\5.14.1\mingw73_64\mkspecs\features\toolchain.prf C:\Qt\5.14.1\mingw73_64\mkspecs\features\default_pre.prf C:\Qt\5.14.1\mingw73_64\mkspecs\features\win32\default_pre.prf C:\Qt\5.14.1\mingw73_64\mkspecs\features\resolve_config.prf C:\Qt\5.14.1\mingw73_64\mkspecs\features\default_post.prf C:\Qt\5.14.1\mingw73_64\mkspecs\features\qml_debug.prf C:\Qt\5.14.1\mingw73_64\mkspecs\features\precompile_header.prf C:\Qt\5.14.1\mingw73_64\mkspecs\features\warn_on.prf C:\Qt\5.14.1\mingw73_64\mkspecs\features\qt.prf C:\Qt\5.14.1\mingw73_64\mkspecs\features\resources_functions.prf C:\Qt\5.14.1\mingw73_64\mkspecs\features\resources.prf C:\Qt\5.14.1\mingw73_64\mkspecs\features\moc.prf C:\Qt\5.14.1\mingw73_64\mkspecs\features\win32\opengl.prf C:\Qt\5.14.1\mingw73_64\mkspecs\features\uic.prf C:\Qt\5.14.1\mingw73_64\mkspecs\features\qmake_use.prf C:\Qt\5.14.1\mingw73_64\mkspecs\features\file_copies.prf C:\Qt\5.14.1\mingw73_64\mkspecs\features\win32\windows.prf C:\Qt\5.14.1\mingw73_64\mkspecs\features\testcase_targets.prf C:\Qt\5.14.1\mingw73_64\mkspecs\features\exceptions.prf C:\Qt\5.14.1\mingw73_64\mkspecs\features\yacc.prf C:\Qt\5.14.1\mingw73_64\mkspecs\features\lex.prf CalculatorOOP.pro C:\Qt\5.14.1\mingw73_64\lib\Qt5Widgets.prl C:\Qt\5.14.1\mingw73_64\lib\Qt5Gui.prl C:\Qt\5.14.1\mingw73_64\lib\Qt5Core.prl C:\Qt\5.14.1\mingw73_64\lib\qtmain.prl    C:\Qt\5.14.1\mingw73_64\mkspecs\features\data\dummy.cpp Calculator\Calculator.hpp Exception\BaseException.hpp Exception\NegativeSqrtException.hpp Parser\Parser.hpp Expression\Expression.hpp Expression\TerminalExpression.hpp Expression\Unary\UnaryExpression.hpp Expression\Unary\NegativeExpression.hpp Expression\Unary\SinExpression.hpp Expression\Unary\CosExpression.hpp Expression\Unary\TanExpression.hpp Expression\Unary\SqrtExpression.hpp Expression\Binary\BinaryExpression.hpp Expression\Binary\AddExpression.hpp Expression\Binary\SubstractExpression.hpp Expression\Binary\MultiplyExpression.hpp Expression\Binary\DivideExpression.hpp Expression\Binary\ModExpression.hpp Expression\Binary\PowExpression.hpp  Calculator\Calculator.cpp Parser\Parser.cpp Expression\Expression.cpp Expression\TerminalExpression.cpp Expression\Unary\UnaryExpression.cpp Expression\Unary\NegativeExpression.cpp Expression\Unary\SinExpression.cpp Expression\Unary\CosExpression.cpp Expression\Unary\TanExpression.cpp Expression\Unary\SqrtExpression.cpp Expression\Binary\BinaryExpression.cpp Expression\Binary\AddExpression.cpp Expression\Binary\SubstractExpression.cpp Expression\Binary\MultiplyExpression.cpp Expression\Binary\DivideExpression.cpp Expression\Binary\ModExpression.cpp Expression\Binary\PowExpression.cpp main.cpp Calculator\calculator.ui    
 
 clean: compiler_clean 
 	-$(DEL_FILE) Calculator.o Parser.o Expression.o TerminalExpression.o UnaryExpression.o NegativeExpression.o SinExpression.o CosExpression.o TanExpression.o SqrtExpression.o BinaryExpression.o AddExpression.o SubstractExpression.o MultiplyExpression.o DivideExpression.o ModExpression.o PowExpression.o main.o moc_Calculator.o
@@ -532,7 +536,7 @@ moc_predefs.h: C:/Qt/5.14.1/mingw73_64/mkspecs/features/data/dummy.cpp
 compiler_moc_header_make_all: moc_Calculator.cpp
 compiler_moc_header_clean:
 	-$(DEL_FILE) moc_Calculator.cpp
-moc_Calculator.cpp: src/Calculator/Calculator.hpp \
+moc_Calculator.cpp: Calculator/Calculator.hpp \
 		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/QMainWindow \
 		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/qmainwindow.h \
 		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/qtwidgetsglobal.h \
@@ -642,25 +646,29 @@ moc_Calculator.cpp: src/Calculator/Calculator.hpp \
 		C:/Qt/5.14.1/mingw73_64/include/QtGui/qicon.h \
 		C:/Qt/5.14.1/mingw73_64/include/QtCore/QQueue \
 		C:/Qt/5.14.1/mingw73_64/include/QtCore/qqueue.h \
-		src/Parser/Parser.hpp \
-		src/Expression/Binary/AddExpression.hpp \
-		src/Expression/Binary/BinaryExpression.hpp \
-		src/Expression/Expression.hpp \
-		src/Expression/Binary/SubstractExpression.hpp \
-		src/Expression/Binary/MultiplyExpression.hpp \
-		src/Expression/Binary/DivideExpression.hpp \
-		src/Expression/Binary/ModExpression.hpp \
-		src/Expression/Binary/PowExpression.hpp \
-		src/Expression/Unary/NegativeExpression.hpp \
-		src/Expression/Unary/UnaryExpression.hpp \
-		src/Expression/Unary/SinExpression.hpp \
-		src/Expression/Unary/CosExpression.hpp \
-		src/Expression/Unary/TanExpression.hpp \
-		src/Expression/Unary/SqrtExpression.hpp \
-		src/Expression/TerminalExpression.hpp \
+		Parser/Parser.hpp \
+		Expression/Binary/AddExpression.hpp \
+		Expression/Binary/BinaryExpression.hpp \
+		Expression/Expression.hpp \
+		Expression/Binary/SubstractExpression.hpp \
+		Expression/Binary/MultiplyExpression.hpp \
+		Expression/Binary/DivideExpression.hpp \
+		Exception/Exception.hpp \
+		Exception/BaseException.hpp \
+		Expression/Binary/ModExpression.hpp \
+		Exception/ModException.hpp \
+		Expression/Binary/PowExpression.hpp \
+		Expression/Unary/NegativeExpression.hpp \
+		Expression/Unary/UnaryExpression.hpp \
+		Expression/Unary/SinExpression.hpp \
+		Expression/Unary/CosExpression.hpp \
+		Expression/Unary/TanExpression.hpp \
+		Expression/Unary/SqrtExpression.hpp \
+		Exception/NegativeSqrtException.hpp \
+		Expression/TerminalExpression.hpp \
 		moc_predefs.h \
 		C:/Qt/5.14.1/mingw73_64/bin/moc.exe
-	C:\Qt\5.14.1\mingw73_64\bin\moc.exe $(DEFINES) --include C:/Users/nomight/Desktop/Codes/OOP/Tubes/CalculatorOOP/moc_predefs.h -IC:/Qt/5.14.1/mingw73_64/mkspecs/win32-g++ -IC:/Users/nomight/Desktop/Codes/OOP/Tubes/CalculatorOOP -IC:/Qt/5.14.1/mingw73_64/include -IC:/Qt/5.14.1/mingw73_64/include/QtWidgets -IC:/Qt/5.14.1/mingw73_64/include/QtGui -IC:/Qt/5.14.1/mingw73_64/include/QtANGLE -IC:/Qt/5.14.1/mingw73_64/include/QtCore -IC:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++ -IC:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/backward -IC:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include -IC:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include-fixed -IC:/Qt/Tools/mingw730_64/x86_64-w64-mingw32/include src\Calculator\Calculator.hpp -o moc_Calculator.cpp
+	C:\Qt\5.14.1\mingw73_64\bin\moc.exe $(DEFINES) --include C:/Users/nomight/Desktop/Codes/OOP/Tubes/CalculatorOOP/moc_predefs.h -IC:/Qt/5.14.1/mingw73_64/mkspecs/win32-g++ -IC:/Users/nomight/Desktop/Codes/OOP/Tubes/CalculatorOOP -IC:/Qt/5.14.1/mingw73_64/include -IC:/Qt/5.14.1/mingw73_64/include/QtWidgets -IC:/Qt/5.14.1/mingw73_64/include/QtGui -IC:/Qt/5.14.1/mingw73_64/include/QtANGLE -IC:/Qt/5.14.1/mingw73_64/include/QtCore -IC:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++ -IC:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/backward -IC:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include -IC:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include-fixed -IC:/Qt/Tools/mingw730_64/x86_64-w64-mingw32/include Calculator\Calculator.hpp -o moc_Calculator.cpp
 
 compiler_moc_objc_header_make_all:
 compiler_moc_objc_header_clean:
@@ -669,9 +677,9 @@ compiler_moc_source_clean:
 compiler_uic_make_all: ui_calculator.h
 compiler_uic_clean:
 	-$(DEL_FILE) ui_calculator.h
-ui_calculator.h: src/Calculator/calculator.ui \
+ui_calculator.h: Calculator/calculator.ui \
 		C:/Qt/5.14.1/mingw73_64/bin/uic.exe
-	C:\Qt\5.14.1\mingw73_64\bin\uic.exe src\Calculator\calculator.ui -o ui_calculator.h
+	C:\Qt\5.14.1\mingw73_64\bin\uic.exe Calculator\calculator.ui -o ui_calculator.h
 
 compiler_yacc_decl_make_all:
 compiler_yacc_decl_clean:
@@ -685,7 +693,7 @@ compiler_clean: compiler_moc_predefs_clean compiler_moc_header_clean compiler_ui
 
 ####### Compile
 
-Calculator.o: src/Calculator/Calculator.cpp src/Calculator/Calculator.hpp \
+Calculator.o: Calculator/Calculator.cpp Calculator/Calculator.hpp \
 		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/QMainWindow \
 		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/qmainwindow.h \
 		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/qtwidgetsglobal.h \
@@ -795,140 +803,128 @@ Calculator.o: src/Calculator/Calculator.cpp src/Calculator/Calculator.hpp \
 		C:/Qt/5.14.1/mingw73_64/include/QtGui/qicon.h \
 		C:/Qt/5.14.1/mingw73_64/include/QtCore/QQueue \
 		C:/Qt/5.14.1/mingw73_64/include/QtCore/qqueue.h \
-		src/Parser/Parser.hpp \
-		src/Expression/Binary/AddExpression.hpp \
-		src/Expression/Binary/BinaryExpression.hpp \
-		src/Expression/Expression.hpp \
-		src/Expression/Binary/SubstractExpression.hpp \
-		src/Expression/Binary/MultiplyExpression.hpp \
-		src/Expression/Binary/DivideExpression.hpp \
-		src/Expression/Binary/ModExpression.hpp \
-		src/Expression/Binary/PowExpression.hpp \
-		src/Expression/Unary/NegativeExpression.hpp \
-		src/Expression/Unary/UnaryExpression.hpp \
-		src/Expression/Unary/SinExpression.hpp \
-		src/Expression/Unary/CosExpression.hpp \
-		src/Expression/Unary/TanExpression.hpp \
-		src/Expression/Unary/SqrtExpression.hpp \
-		src/Expression/TerminalExpression.hpp \
-		src/Calculator/ui_calculator.h \
-		C:/Qt/5.14.1/mingw73_64/include/QtCore/QVariant \
-		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/QApplication \
-		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/qapplication.h \
-		C:/Qt/5.14.1/mingw73_64/include/QtCore/qcoreapplication.h \
-		C:/Qt/5.14.1/mingw73_64/include/QtCore/qeventloop.h \
-		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/qdesktopwidget.h \
-		C:/Qt/5.14.1/mingw73_64/include/QtGui/qguiapplication.h \
-		C:/Qt/5.14.1/mingw73_64/include/QtGui/qinputmethod.h \
-		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/QGridLayout \
-		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/qgridlayout.h \
-		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/qlayout.h \
-		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/qlayoutitem.h \
-		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/qboxlayout.h \
-		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/QLineEdit \
-		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/qlineedit.h \
-		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/qframe.h \
-		C:/Qt/5.14.1/mingw73_64/include/QtGui/qtextcursor.h \
-		C:/Qt/5.14.1/mingw73_64/include/QtGui/qtextformat.h \
-		C:/Qt/5.14.1/mingw73_64/include/QtGui/qpen.h \
-		C:/Qt/5.14.1/mingw73_64/include/QtGui/qtextoption.h \
-		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/QPushButton \
-		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/qpushbutton.h \
-		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/qabstractbutton.h \
-		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/QStatusBar \
-		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/qstatusbar.h \
-		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/QWidget
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o Calculator.o src\Calculator\Calculator.cpp
+		Parser/Parser.hpp \
+		Expression/Binary/AddExpression.hpp \
+		Expression/Binary/BinaryExpression.hpp \
+		Expression/Expression.hpp \
+		Expression/Binary/SubstractExpression.hpp \
+		Expression/Binary/MultiplyExpression.hpp \
+		Expression/Binary/DivideExpression.hpp \
+		Exception/Exception.hpp \
+		Exception/BaseException.hpp \
+		Expression/Binary/ModExpression.hpp \
+		Exception/ModException.hpp \
+		Expression/Binary/PowExpression.hpp \
+		Expression/Unary/NegativeExpression.hpp \
+		Expression/Unary/UnaryExpression.hpp \
+		Expression/Unary/SinExpression.hpp \
+		Expression/Unary/CosExpression.hpp \
+		Expression/Unary/TanExpression.hpp \
+		Expression/Unary/SqrtExpression.hpp \
+		Exception/NegativeSqrtException.hpp \
+		Expression/TerminalExpression.hpp \
+		ui_calculator.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o Calculator.o Calculator\Calculator.cpp
 
-Parser.o: src/Parser/Parser.cpp src/Parser/Parser.hpp \
-		src/Expression/Binary/AddExpression.hpp \
-		src/Expression/Binary/BinaryExpression.hpp \
-		src/Expression/Expression.hpp \
-		src/Expression/Binary/SubstractExpression.hpp \
-		src/Expression/Binary/MultiplyExpression.hpp \
-		src/Expression/Binary/DivideExpression.hpp \
-		src/Expression/Binary/ModExpression.hpp \
-		src/Expression/Binary/PowExpression.hpp \
-		src/Expression/Unary/NegativeExpression.hpp \
-		src/Expression/Unary/UnaryExpression.hpp \
-		src/Expression/Unary/SinExpression.hpp \
-		src/Expression/Unary/CosExpression.hpp \
-		src/Expression/Unary/TanExpression.hpp \
-		src/Expression/Unary/SqrtExpression.hpp \
-		src/Expression/TerminalExpression.hpp
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o Parser.o src\Parser\Parser.cpp
+Parser.o: Parser/Parser.cpp Parser/Parser.hpp \
+		Expression/Binary/AddExpression.hpp \
+		Expression/Binary/BinaryExpression.hpp \
+		Expression/Expression.hpp \
+		Expression/Binary/SubstractExpression.hpp \
+		Expression/Binary/MultiplyExpression.hpp \
+		Expression/Binary/DivideExpression.hpp \
+		Exception/Exception.hpp \
+		Exception/BaseException.hpp \
+		Expression/Binary/ModExpression.hpp \
+		Exception/ModException.hpp \
+		Expression/Binary/PowExpression.hpp \
+		Expression/Unary/NegativeExpression.hpp \
+		Expression/Unary/UnaryExpression.hpp \
+		Expression/Unary/SinExpression.hpp \
+		Expression/Unary/CosExpression.hpp \
+		Expression/Unary/TanExpression.hpp \
+		Expression/Unary/SqrtExpression.hpp \
+		Exception/NegativeSqrtException.hpp \
+		Expression/TerminalExpression.hpp
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o Parser.o Parser\Parser.cpp
 
-Expression.o: src/Expression/Expression.cpp src/Expression/Expression.hpp
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o Expression.o src\Expression\Expression.cpp
+Expression.o: Expression/Expression.cpp Expression/Expression.hpp
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o Expression.o Expression\Expression.cpp
 
-TerminalExpression.o: src/Expression/TerminalExpression.cpp src/Expression/TerminalExpression.hpp \
-		src/Expression/Expression.hpp
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o TerminalExpression.o src\Expression\TerminalExpression.cpp
+TerminalExpression.o: Expression/TerminalExpression.cpp Expression/TerminalExpression.hpp \
+		Expression/Expression.hpp
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o TerminalExpression.o Expression\TerminalExpression.cpp
 
-UnaryExpression.o: src/Expression/Unary/UnaryExpression.cpp src/Expression/Unary/UnaryExpression.hpp \
-		src/Expression/Expression.hpp
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o UnaryExpression.o src\Expression\Unary\UnaryExpression.cpp
+UnaryExpression.o: Expression/Unary/UnaryExpression.cpp Expression/Unary/UnaryExpression.hpp \
+		Expression/Expression.hpp
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o UnaryExpression.o Expression\Unary\UnaryExpression.cpp
 
-NegativeExpression.o: src/Expression/Unary/NegativeExpression.cpp src/Expression/Unary/NegativeExpression.hpp \
-		src/Expression/Unary/UnaryExpression.hpp \
-		src/Expression/Expression.hpp
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o NegativeExpression.o src\Expression\Unary\NegativeExpression.cpp
+NegativeExpression.o: Expression/Unary/NegativeExpression.cpp Expression/Unary/NegativeExpression.hpp \
+		Expression/Unary/UnaryExpression.hpp \
+		Expression/Expression.hpp
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o NegativeExpression.o Expression\Unary\NegativeExpression.cpp
 
-SinExpression.o: src/Expression/Unary/SinExpression.cpp src/Expression/Unary/SinExpression.hpp \
-		src/Expression/Unary/UnaryExpression.hpp \
-		src/Expression/Expression.hpp
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o SinExpression.o src\Expression\Unary\SinExpression.cpp
+SinExpression.o: Expression/Unary/SinExpression.cpp Expression/Unary/SinExpression.hpp \
+		Expression/Unary/UnaryExpression.hpp \
+		Expression/Expression.hpp
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o SinExpression.o Expression\Unary\SinExpression.cpp
 
-CosExpression.o: src/Expression/Unary/CosExpression.cpp src/Expression/Unary/CosExpression.hpp \
-		src/Expression/Unary/UnaryExpression.hpp \
-		src/Expression/Expression.hpp
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o CosExpression.o src\Expression\Unary\CosExpression.cpp
+CosExpression.o: Expression/Unary/CosExpression.cpp Expression/Unary/CosExpression.hpp \
+		Expression/Unary/UnaryExpression.hpp \
+		Expression/Expression.hpp
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o CosExpression.o Expression\Unary\CosExpression.cpp
 
-TanExpression.o: src/Expression/Unary/TanExpression.cpp src/Expression/Unary/TanExpression.hpp \
-		src/Expression/Unary/UnaryExpression.hpp \
-		src/Expression/Expression.hpp
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o TanExpression.o src\Expression\Unary\TanExpression.cpp
+TanExpression.o: Expression/Unary/TanExpression.cpp Expression/Unary/TanExpression.hpp \
+		Expression/Unary/UnaryExpression.hpp \
+		Expression/Expression.hpp
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o TanExpression.o Expression\Unary\TanExpression.cpp
 
-SqrtExpression.o: src/Expression/Unary/SqrtExpression.cpp src/Expression/Unary/SqrtExpression.hpp \
-		src/Expression/Unary/UnaryExpression.hpp \
-		src/Expression/Expression.hpp
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o SqrtExpression.o src\Expression\Unary\SqrtExpression.cpp
+SqrtExpression.o: Expression/Unary/SqrtExpression.cpp Expression/Unary/SqrtExpression.hpp \
+		Expression/Unary/UnaryExpression.hpp \
+		Expression/Expression.hpp \
+		Exception/NegativeSqrtException.hpp \
+		Exception/BaseException.hpp
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o SqrtExpression.o Expression\Unary\SqrtExpression.cpp
 
-BinaryExpression.o: src/Expression/Binary/BinaryExpression.cpp src/Expression/Binary/BinaryExpression.hpp \
-		src/Expression/Expression.hpp
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o BinaryExpression.o src\Expression\Binary\BinaryExpression.cpp
+BinaryExpression.o: Expression/Binary/BinaryExpression.cpp Expression/Binary/BinaryExpression.hpp \
+		Expression/Expression.hpp
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o BinaryExpression.o Expression\Binary\BinaryExpression.cpp
 
-AddExpression.o: src/Expression/Binary/AddExpression.cpp src/Expression/Binary/AddExpression.hpp \
-		src/Expression/Binary/BinaryExpression.hpp \
-		src/Expression/Expression.hpp
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o AddExpression.o src\Expression\Binary\AddExpression.cpp
+AddExpression.o: Expression/Binary/AddExpression.cpp Expression/Binary/AddExpression.hpp \
+		Expression/Binary/BinaryExpression.hpp \
+		Expression/Expression.hpp
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o AddExpression.o Expression\Binary\AddExpression.cpp
 
-SubstractExpression.o: src/Expression/Binary/SubstractExpression.cpp src/Expression/Binary/SubstractExpression.hpp \
-		src/Expression/Binary/BinaryExpression.hpp \
-		src/Expression/Expression.hpp
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o SubstractExpression.o src\Expression\Binary\SubstractExpression.cpp
+SubstractExpression.o: Expression/Binary/SubstractExpression.cpp Expression/Binary/SubstractExpression.hpp \
+		Expression/Binary/BinaryExpression.hpp \
+		Expression/Expression.hpp
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o SubstractExpression.o Expression\Binary\SubstractExpression.cpp
 
-MultiplyExpression.o: src/Expression/Binary/MultiplyExpression.cpp src/Expression/Binary/MultiplyExpression.hpp \
-		src/Expression/Binary/BinaryExpression.hpp \
-		src/Expression/Expression.hpp
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o MultiplyExpression.o src\Expression\Binary\MultiplyExpression.cpp
+MultiplyExpression.o: Expression/Binary/MultiplyExpression.cpp Expression/Binary/MultiplyExpression.hpp \
+		Expression/Binary/BinaryExpression.hpp \
+		Expression/Expression.hpp
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o MultiplyExpression.o Expression\Binary\MultiplyExpression.cpp
 
-DivideExpression.o: src/Expression/Binary/DivideExpression.cpp src/Expression/Binary/DivideExpression.hpp \
-		src/Expression/Binary/BinaryExpression.hpp \
-		src/Expression/Expression.hpp
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o DivideExpression.o src\Expression\Binary\DivideExpression.cpp
+DivideExpression.o: Expression/Binary/DivideExpression.cpp Expression/Binary/DivideExpression.hpp \
+		Expression/Binary/BinaryExpression.hpp \
+		Expression/Expression.hpp \
+		Exception/Exception.hpp \
+		Exception/BaseException.hpp
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o DivideExpression.o Expression\Binary\DivideExpression.cpp
 
-ModExpression.o: src/Expression/Binary/ModExpression.cpp src/Expression/Binary/ModExpression.hpp \
-		src/Expression/Binary/BinaryExpression.hpp \
-		src/Expression/Expression.hpp
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o ModExpression.o src\Expression\Binary\ModExpression.cpp
+ModExpression.o: Expression/Binary/ModExpression.cpp Expression/Binary/ModExpression.hpp \
+		Expression/Binary/BinaryExpression.hpp \
+		Expression/Expression.hpp \
+		Exception/ModException.hpp \
+		Exception/BaseException.hpp
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o ModExpression.o Expression\Binary\ModExpression.cpp
 
-PowExpression.o: src/Expression/Binary/PowExpression.cpp src/Expression/Binary/PowExpression.hpp \
-		src/Expression/Binary/BinaryExpression.hpp \
-		src/Expression/Expression.hpp
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o PowExpression.o src\Expression\Binary\PowExpression.cpp
+PowExpression.o: Expression/Binary/PowExpression.cpp Expression/Binary/PowExpression.hpp \
+		Expression/Binary/BinaryExpression.hpp \
+		Expression/Expression.hpp
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o PowExpression.o Expression\Binary\PowExpression.cpp
 
-main.o: src/main.cpp src/Calculator/Calculator.hpp \
+main.o: main.cpp Calculator/Calculator.hpp \
 		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/QMainWindow \
 		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/qmainwindow.h \
 		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/qtwidgetsglobal.h \
@@ -1038,22 +1034,26 @@ main.o: src/main.cpp src/Calculator/Calculator.hpp \
 		C:/Qt/5.14.1/mingw73_64/include/QtGui/qicon.h \
 		C:/Qt/5.14.1/mingw73_64/include/QtCore/QQueue \
 		C:/Qt/5.14.1/mingw73_64/include/QtCore/qqueue.h \
-		src/Parser/Parser.hpp \
-		src/Expression/Binary/AddExpression.hpp \
-		src/Expression/Binary/BinaryExpression.hpp \
-		src/Expression/Expression.hpp \
-		src/Expression/Binary/SubstractExpression.hpp \
-		src/Expression/Binary/MultiplyExpression.hpp \
-		src/Expression/Binary/DivideExpression.hpp \
-		src/Expression/Binary/ModExpression.hpp \
-		src/Expression/Binary/PowExpression.hpp \
-		src/Expression/Unary/NegativeExpression.hpp \
-		src/Expression/Unary/UnaryExpression.hpp \
-		src/Expression/Unary/SinExpression.hpp \
-		src/Expression/Unary/CosExpression.hpp \
-		src/Expression/Unary/TanExpression.hpp \
-		src/Expression/Unary/SqrtExpression.hpp \
-		src/Expression/TerminalExpression.hpp \
+		Parser/Parser.hpp \
+		Expression/Binary/AddExpression.hpp \
+		Expression/Binary/BinaryExpression.hpp \
+		Expression/Expression.hpp \
+		Expression/Binary/SubstractExpression.hpp \
+		Expression/Binary/MultiplyExpression.hpp \
+		Expression/Binary/DivideExpression.hpp \
+		Exception/Exception.hpp \
+		Exception/BaseException.hpp \
+		Expression/Binary/ModExpression.hpp \
+		Exception/ModException.hpp \
+		Expression/Binary/PowExpression.hpp \
+		Expression/Unary/NegativeExpression.hpp \
+		Expression/Unary/UnaryExpression.hpp \
+		Expression/Unary/SinExpression.hpp \
+		Expression/Unary/CosExpression.hpp \
+		Expression/Unary/TanExpression.hpp \
+		Expression/Unary/SqrtExpression.hpp \
+		Exception/NegativeSqrtException.hpp \
+		Expression/TerminalExpression.hpp \
 		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/QApplication \
 		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/qapplication.h \
 		C:/Qt/5.14.1/mingw73_64/include/QtCore/qcoreapplication.h \
@@ -1061,7 +1061,7 @@ main.o: src/main.cpp src/Calculator/Calculator.hpp \
 		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/qdesktopwidget.h \
 		C:/Qt/5.14.1/mingw73_64/include/QtGui/qguiapplication.h \
 		C:/Qt/5.14.1/mingw73_64/include/QtGui/qinputmethod.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o src\main.cpp
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o main.cpp
 
 moc_Calculator.o: moc_Calculator.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_Calculator.o moc_Calculator.cpp

@@ -4,6 +4,7 @@
 #ifndef _MOD_EXPRESSION_HPP_
 #define _MOD_EXPRESSION_HPP_
 #include "BinaryExpression.hpp"
+#include "../../Exception/ModException.hpp"
 #include <string>
 using namespace std;
 

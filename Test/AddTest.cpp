@@ -8,6 +8,6 @@ TEST_CASE("Add") {
     REQUIRE(Parser::evalBinaryOp(19.5, 0.55, "+") == 20.05);
     REQUIRE(Parser::evalBinaryOp(102, -13, "+") == 89);
     REQUIRE(Parser::evalBinaryOp(0, 20.5, "+") == 20.5);
-    REQUIRE(Parser::evalBinaryOp(-20.99, 5.99, "+") == -15);
+    REQUIRE(Parser::evalBinaryOp(-20.99, 5.99, "+") == Approx(-15));
     REQUIRE(Parser::evalBinaryOp(-1, -0.3, "+") == -1.3);
 }
