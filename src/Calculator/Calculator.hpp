@@ -4,6 +4,7 @@
 #include <iostream>
 #include <QMainWindow>
 #include <QQueue>
+#include <queue>
 #include "../Parser/Parser.hpp"
 
 using namespace std;
@@ -19,7 +20,8 @@ private:
     double ans;
     string tokens;
     Ui::Calculator *ui;
-    QQueue<double> memo;
+//    QQueue<double> memo;
+    queue<double> memo;
 public:
     Calculator(QWidget *parent = nullptr);
     ~Calculator();

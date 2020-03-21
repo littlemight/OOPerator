@@ -8,17 +8,10 @@ Calculator::Calculator(QWidget *parent)
     ui->setupUi(this);
     ui->display->setText(QString::number(0));
     ui->errorLog->setText(QString::fromStdString("Bukan Kalkulator Scientific"));
-    memo.clear();
+
+    memo = {};
     tokens.clear();
     ans = 0;
-
-    // link the digit buttons to functions
-    QPushButton *digBtns[10];
-    for (int i = 0; i < 10; i++) {
-        QString btnName = "digBtn" + QString::number(i);
-        digBtns[i] = this->findChild<QPushButton *>(btnName);
-        connect(digBtns[i], SIGNAL(released()), this, SLOT(digClicked()));
-    }
 
     // link the non digit buttons to their corresponding functions
     QList<QPushButton *> allNonDigit = this->findChildren<QPushButton *>();
@@ -44,6 +37,8 @@ Calculator::Calculator(QWidget *parent)
             connect(*it, SIGNAL(released()), this, SLOT(mrClicked()));
         } else if (txt  == "CLRSCR") {
             connect(*it, SIGNAL(released()), this, SLOT(clrscrClicked()));
+        } else if (isdigit(txt.back())) {
+            connect(*it, SIGNAL(released()), this, SLOT(digClicked()));
         }
     }
 }
@@ -102,10 +97,9 @@ void Calculator::eqClicked() {
         double answer = Parser::evalExpression(this->tokens);
         this->ui->errorLog->setText(this->ui->display->text());
         this->ui->display->setText(QString::number(answer, 'g', 16));
-        this->tokens.clear();
+        this->tokens = to_string(answer);
         this->ans = answer;
     } catch (const char* e) {
-//        this->ui->errorLog->setText(QString::fromStdString(tokens));
         this->ui->errorLog->setText(QString::fromStdString(e));
     } catch (BaseException* e) {
         this->ui->errorLog->setText(QString::fromStdString(e->getMessage()));
@@ -122,7 +116,7 @@ void Calculator::clrscrClicked() {
 void Calculator::acClicked() {
     clrscrClicked();
     this->ans = 0;
-    memo.clear();
+    memo = {};
 }
 
 void Calculator::decClicked() {
@@ -157,25 +151,25 @@ void Calculator::ansClicked() {
 }
 
 void Calculator::mcClicked() {
+    // ASUMSI: yang di push itu nilai yang di DISPLAY, bukan yang di ans
     QString dspTxt = ui->display->text();
-    // yang di push itu ans
-    this->memo.enqueue(ans);
-    ui->errorLog->setText(QString::fromStdString(to_string(ans) + " telah disimpan di memory"));
-//    if(digClick()){
-//        this->memo.push(this.tokens);
-//    }
-//    else{
-//        cout << "Tidak bisa menyimpan" << this->tokens << endl;
-//    }
+
+    try {
+        double val = Parser::evalExpression(this->tokens);
+        this->memo.push(val);
+        ui->errorLog->setText(QString::fromStdString(to_string(val) + " telah disimpan di memory"));
+    } catch (BaseException* e) {
+        ui->errorLog->setText(QString::fromStdString(e->getMessage()));
+    }
 }
 
 void Calculator::mrClicked() {
     QString dspTxt = ui->display->text();
     if (this->memo.empty()){
-        cout << "Tidak ada nilai yang disimpan di history" << endl;
-    }
-    else{
-        double val = this->memo.dequeue();
+        ui->errorLog->setText(QString::fromStdString("Tidak ada nilai yang disimpan di history"));
+    } else{
+        double val = this->memo.front();
+        this->memo.pop();
         if (this->tokens.empty()) {
             ui->display->setText(QString::number(val));
             this->tokens = to_string(val);

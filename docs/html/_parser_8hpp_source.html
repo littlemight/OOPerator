@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.17"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>My Project: Parser/Parser.hpp Source File</title>
+<title>CalculatOOPr: src/Parser/Parser.hpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,7 +21,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">My Project
+   <div id="projectname">CalculatOOPr
    </div>
   </td>
  </tr>
@@ -61,7 +61,7 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_df9c4130e7601915b63fc941466b92f8.html">Parser</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_be6b6bc8933d1b72ef64ada15681fca0.html">Parser</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -101,7 +101,7 @@ $(function() {
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">bool</span> isUnaryStmt(<span class="keywordtype">string</span> stmt, <span class="keywordtype">double</span> &amp;val, <span class="keywordtype">string</span> &amp;unaryOp);</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> evalStack(stack&lt;Expression *&gt; &amp;<a class="code" href="namespace_catch_1_1_generators.html#a55ca9a1132e662d9603c516161dcae35">values</a>, stack&lt;string&gt; &amp;operators);</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> evalStack(stack&lt;Expression *&gt; &amp;values, stack&lt;string&gt; &amp;operators);</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keyword">static</span> <a class="code" href="class_expression.html">Expression</a>* evalUnaryOp(<a class="code" href="class_expression.html">Expression</a>* a, <span class="keywordtype">string</span> unaryOp);</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keyword">static</span> <a class="code" href="class_expression.html">Expression</a>* evalBinaryOp(<a class="code" href="class_expression.html">Expression</a>* a, <a class="code" href="class_expression.html">Expression</a>* b, <span class="keywordtype">string</span> binaryOp);</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="keyword">public</span>:</div>
@@ -125,7 +125,6 @@ $(function() {
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;};</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="preprocessor">#endif // PARSER_H</span></div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="anamespace_catch_1_1_generators_html_a55ca9a1132e662d9603c516161dcae35"><div class="ttname"><a href="namespace_catch_1_1_generators.html#a55ca9a1132e662d9603c516161dcae35">Catch::Generators::values</a></div><div class="ttdeci">GeneratorWrapper&lt; T &gt; values(std::initializer_list&lt; T &gt; values)</div><div class="ttdef"><b>Definition:</b> catch.hpp:3975</div></div>
 <div class="ttc" id="aclass_parser_html_a53d02399e768dc61b5b48f84296dcfa3"><div class="ttname"><a href="class_parser.html#a53d02399e768dc61b5b48f84296dcfa3">Parser::binaryOps</a></div><div class="ttdeci">static set&lt; string &gt; binaryOps</div><div class="ttdef"><b>Definition:</b> Parser.hpp:69</div></div>
 <div class="ttc" id="aclass_parser_html"><div class="ttname"><a href="class_parser.html">Parser</a></div><div class="ttdoc">Class yang berisi method static. digunakan untuk mengevaluasi string yang berisi ekspresi matematika.</div><div class="ttdef"><b>Definition:</b> Parser.hpp:29</div></div>
 <div class="ttc" id="aclass_parser_html_a973952b67dcd6c4f6c26e5f21876c58c"><div class="ttname"><a href="class_parser.html#a973952b67dcd6c4f6c26e5f21876c58c">Parser::unaryOps</a></div><div class="ttdeci">static set&lt; string &gt; unaryOps</div><div class="ttdef"><b>Definition:</b> Parser.hpp:70</div></div>

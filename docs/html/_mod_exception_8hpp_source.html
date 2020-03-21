@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.17"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>My Project: Exception/ModException.hpp Source File</title>
+<title>CalculatOOPr: src/Exception/ModException.hpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,7 +21,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">My Project
+   <div id="projectname">CalculatOOPr
    </div>
   </td>
  </tr>
@@ -61,7 +61,7 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_723d7fe5d6ff5943cb1202e9b3b398a3.html">Exception</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_8325968175170435003107496b1cfdde.html">Exception</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -75,29 +75,31 @@ $(function() {
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_base_exception_8hpp.html">BaseException.hpp</a>&quot;</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
 <div class="line"><a name="l00006"></a><span class="lineno"><a class="line" href="class_zero_mod_exception.html">    6</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_zero_mod_exception.html">ZeroModException</a>: <span class="keyword">public</span> <a class="code" href="class_base_exception.html">BaseException</a> {</div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00008"></a><span class="lineno"><a class="line" href="class_zero_mod_exception.html#a85dc9f79abbc91768cf9a614ed806d66">    8</a></span>&#160;    <span class="keywordtype">string</span> <a class="code" href="class_zero_mod_exception.html#a85dc9f79abbc91768cf9a614ed806d66">getMessage</a>() {</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;        <span class="keywordtype">string</span> ret = <span class="stringliteral">&quot;Tidak bisa modulo dengan angka 0&quot;</span>;</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;        <span class="keywordflow">return</span> ret;</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    }</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;};</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
-<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="class_decimal_mod_exception.html">   14</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_decimal_mod_exception.html">DecimalModException</a>: <span class="keyword">public</span> <a class="code" href="class_base_exception.html">BaseException</a> {</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="class_decimal_mod_exception.html#a98eaeb8bb13bb7d6eb640fd6ccb849fc">   16</a></span>&#160;    <span class="keywordtype">string</span> <a class="code" href="class_decimal_mod_exception.html#a98eaeb8bb13bb7d6eb640fd6ccb849fc">getMessage</a>() {</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        <span class="keywordtype">string</span> ret = <span class="stringliteral">&quot;Decimal pada operasi modulo tidak diperkenankan&quot;</span>;</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        <span class="keywordflow">return</span> ret;</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    }</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;};</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;    <span class="comment">//mengirimkan pesan kesalahan jika modulo 0</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="class_zero_mod_exception.html#a85dc9f79abbc91768cf9a614ed806d66">    9</a></span>&#160;    <span class="keywordtype">string</span> <a class="code" href="class_zero_mod_exception.html#a85dc9f79abbc91768cf9a614ed806d66">getMessage</a>() {</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;        <span class="keywordtype">string</span> ret = <span class="stringliteral">&quot;Tidak bisa modulo dengan angka 0&quot;</span>;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;        <span class="keywordflow">return</span> ret;</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    }</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;};</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="class_decimal_mod_exception.html">   15</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_decimal_mod_exception.html">DecimalModException</a>: <span class="keyword">public</span> <a class="code" href="class_base_exception.html">BaseException</a> {</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="comment">//mengirimkan pesan kesalahan jika modulo decimal</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="class_decimal_mod_exception.html#a98eaeb8bb13bb7d6eb640fd6ccb849fc">   18</a></span>&#160;    <span class="keywordtype">string</span> <a class="code" href="class_decimal_mod_exception.html#a98eaeb8bb13bb7d6eb640fd6ccb849fc">getMessage</a>() {</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        <span class="keywordtype">string</span> ret = <span class="stringliteral">&quot;Decimal pada operasi modulo tidak diperkenankan&quot;</span>;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        <span class="keywordflow">return</span> ret;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    }</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;};</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="aclass_decimal_mod_exception_html"><div class="ttname"><a href="class_decimal_mod_exception.html">DecimalModException</a></div><div class="ttdef"><b>Definition:</b> ModException.hpp:14</div></div>
+<div class="ttc" id="aclass_decimal_mod_exception_html"><div class="ttname"><a href="class_decimal_mod_exception.html">DecimalModException</a></div><div class="ttdef"><b>Definition:</b> ModException.hpp:15</div></div>
 <div class="ttc" id="aclass_zero_mod_exception_html"><div class="ttname"><a href="class_zero_mod_exception.html">ZeroModException</a></div><div class="ttdef"><b>Definition:</b> ModException.hpp:6</div></div>
 <div class="ttc" id="a_base_exception_8hpp_html"><div class="ttname"><a href="_base_exception_8hpp.html">BaseException.hpp</a></div></div>
 <div class="ttc" id="aclass_base_exception_html"><div class="ttname"><a href="class_base_exception.html">BaseException</a></div><div class="ttdef"><b>Definition:</b> BaseException.hpp:7</div></div>
-<div class="ttc" id="aclass_decimal_mod_exception_html_a98eaeb8bb13bb7d6eb640fd6ccb849fc"><div class="ttname"><a href="class_decimal_mod_exception.html#a98eaeb8bb13bb7d6eb640fd6ccb849fc">DecimalModException::getMessage</a></div><div class="ttdeci">string getMessage()</div><div class="ttdef"><b>Definition:</b> ModException.hpp:16</div></div>
-<div class="ttc" id="aclass_zero_mod_exception_html_a85dc9f79abbc91768cf9a614ed806d66"><div class="ttname"><a href="class_zero_mod_exception.html#a85dc9f79abbc91768cf9a614ed806d66">ZeroModException::getMessage</a></div><div class="ttdeci">string getMessage()</div><div class="ttdef"><b>Definition:</b> ModException.hpp:8</div></div>
+<div class="ttc" id="aclass_decimal_mod_exception_html_a98eaeb8bb13bb7d6eb640fd6ccb849fc"><div class="ttname"><a href="class_decimal_mod_exception.html#a98eaeb8bb13bb7d6eb640fd6ccb849fc">DecimalModException::getMessage</a></div><div class="ttdeci">string getMessage()</div><div class="ttdef"><b>Definition:</b> ModException.hpp:18</div></div>
+<div class="ttc" id="aclass_zero_mod_exception_html_a85dc9f79abbc91768cf9a614ed806d66"><div class="ttname"><a href="class_zero_mod_exception.html#a85dc9f79abbc91768cf9a614ed806d66">ZeroModException::getMessage</a></div><div class="ttdeci">string getMessage()</div><div class="ttdef"><b>Definition:</b> ModException.hpp:9</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

@@ -38,7 +38,14 @@ SOURCES += \
 HEADERS += \
     Calculator/Calculator.hpp \
     Exception/BaseException.hpp \
+    Exception/DivideWithZeroException.hpp \
+    Exception/ImbalancedParanthesesException.hpp \
+    Exception/InvalidDecimalException.hpp \
+    Exception/MoreThanOneOperatorException.hpp \
     Exception/NegativeSqrtException.hpp \
+    Exception/ModException.hpp \
+    Exception/NoParanthesisInUnaryException.hpp \
+    Exception/UndefinedOperatorException.hpp \
     Parser/Parser.hpp \
     Expression/Expression.hpp \
     Expression/TerminalExpression.hpp \

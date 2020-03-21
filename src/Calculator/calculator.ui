@@ -148,7 +148,7 @@
       </property>
       <property name="styleSheet">
        <string notr="true">QPushButton {
-	background: rgb(85, 85, 255);
+	background: rgb(85, 0, 127);
 	color: #ffffff;
 }</string>
       </property>
@@ -500,7 +500,7 @@
       </property>
       <property name="font">
        <font>
-        <family>Raleway Medium</family>
+        <family>Raleway SemiBold</family>
         <pointsize>14</pointsize>
        </font>
       </property>
@@ -729,7 +729,7 @@
       </property>
       <property name="styleSheet">
        <string notr="true">QPushButton {
-	background: rgb(85, 85, 255);
+	background: rgb(85, 0, 127);
 	color: #ffffff;
 }</string>
       </property>

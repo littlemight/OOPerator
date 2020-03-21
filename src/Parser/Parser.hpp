@@ -20,6 +20,11 @@
 #include "../Expression/Unary/TanExpression.hpp"
 #include "../Expression/Unary/SqrtExpression.hpp"
 #include "../Expression/TerminalExpression.hpp"
+#include "../Exception/ImbalancedParanthesesException.hpp"
+#include "../Exception/InvalidDecimalException.hpp"
+#include "../Exception/MoreThanOneOperatorException.hpp"
+#include "../Exception/NoParanthesisInUnaryException.hpp"
+#include "../Exception/UndefinedOperatorException.hpp"
 
 using namespace std;
 

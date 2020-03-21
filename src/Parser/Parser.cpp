@@ -65,7 +65,7 @@ void Parser::splitTokens(string strTokens, vector<string> &tokens) {
                     if (!kurung.empty()) {
                         kurung.pop();
                     } else {
-                        throw "Imbalanced Parantheses Sequence";
+                        throw new ImbalancedParanthesisException;
                     }
                 }
                 // else, dia operator / angka
@@ -122,8 +122,11 @@ bool Parser::isUnaryStmt(string stmt, double &val, string &unaryOp) {
 
     int sz = tmp.size();
     unaryOp = tmp[0];
+    if (!isUnaryOp((unaryOp))) {
+        throw new UndefinedOperatorException(unaryOp);
+    }
     if (!(tmp[1] == "(" && tmp[sz - 1] == ")")) {
-        throw "Imbalanced Parantheses Sequence";
+        throw new NoParanthesisInUnaryException(unaryOp);
     }
 
     string strVal = ""; // statement yang di dalam unary operator
@@ -162,7 +165,6 @@ double Parser::evalUnaryOp(double a, string unaryOp) {
 }
 
 Expression* Parser::evalBinaryOp(Expression* a, Expression* b, string binaryOp) {
-    // cout << "EVALUATING: " << a << ' ' << binaryOp << ' ' << b << '\n';
     Expression* ret;
     if (binaryOp == "+") {
         ret = new AddExpression(a, b);
@@ -185,9 +187,11 @@ double Parser::evalBinaryOp(double a, double b, string binaryOp) {
 }
 
 void Parser::evalStack(stack<Expression *> &values, stack<string> &operators) {
+
     if (values.size() < 2) {
-        throw "Invalid Mathematical Operation";
+        throw new MoreThanOneOperatorException;
     }
+
     Expression* secVal = values.top();
     values.pop();
     Expression* fstVal = values.top();
@@ -195,7 +199,6 @@ void Parser::evalStack(stack<Expression *> &values, stack<string> &operators) {
 
     string opr = operators.top();
     operators.pop();
-    cout << fstVal->solve() << ' ' << opr << ' ' << secVal->solve() << '\n';
     values.push(evalBinaryOp(fstVal, secVal, opr));
 }
 
@@ -210,6 +213,10 @@ double Parser::evalExpression(string strTokens) {
     stack<string> operators;
     int sz = tokens.size();
 
+    for (int i = 0; i < sz; i++) {
+        cout << i + 1 << ": " << tokens[i] << '\n';
+    }
+
     Expression* val;
     for (int i = 0; i < sz; i++) {
         if (tokens[i] == "(") {
@@ -221,15 +228,14 @@ double Parser::evalExpression(string strTokens) {
 
             if (!operators.empty()) {
                 if (operators.top() != "(") {
-                    throw "Imbalanced Parantheses Sequence";
+                    throw new ImbalancedParanthesisException;
                 } else {
                     operators.pop();
                 }
             } else {
-                throw "Imbalanced Parantheses Sequence";
+                throw new ImbalancedParanthesisException;
             }
         } else if (isdigit(tokens[i][0])||
-                   // (tokens[i][0] == '-' && tokens[i] != "-") ||
                    ((i == 0 || (isBinaryOp(tokens[i - 1]) || tokens[i - 1] == "(")) && tokens[i] == "-" && i < sz - 1 && isdigit(tokens[i + 1][0]))
                    ) {
             if ((i == 0 || (isBinaryOp(tokens[i - 1]) || tokens[i - 1] == "(")) &&
@@ -240,13 +246,13 @@ double Parser::evalExpression(string strTokens) {
                     val = new NegativeExpression(new TerminalExpression(stod(tokens[i + 1])));
                     i++;
                 } else {
-                    throw "Invalid decimal point";
+                    throw new InvalidDecimalException(tokens[i] + tokens[i + 1]);
                 }
             } else {
                 if (isValidNum(tokens[i])) {
                     val = new TerminalExpression(stod(tokens[i]));
                 } else {
-                    throw "Invalid decimal point";
+                    throw new InvalidDecimalException(tokens[i]);
                 }
             }
             values.push(val);
@@ -257,17 +263,10 @@ double Parser::evalExpression(string strTokens) {
             operators.push(tokens[i]);
         } else if (isUnaryStmt(tokens[i], tmp, unaryOp)) {
             values.push(evalUnaryOp(new TerminalExpression(tmp), unaryOp));
-        } else {
-            throw "Invalid Mathematical Expression";
         }
     }
-
     while (!operators.empty()) {
         evalStack(values, operators);
     }
-    if (values.size() != 1) {
-        throw "Invalid mathematical expression";
-    } else {
-        return values.top()->solve();
-    }
+    return values.top()->solve();
 }

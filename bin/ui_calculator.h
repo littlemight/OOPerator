@@ -140,7 +140,7 @@ public:
         closeBrBtn->setSizePolicy(sizePolicy);
         closeBrBtn->setFont(font1);
         closeBrBtn->setStyleSheet(QString::fromUtf8("QPushButton {\n"
-"	background: rgb(85, 85, 255);\n"
+"	background: rgb(85, 0, 127);\n"
 "	color: #ffffff;\n"
 "}"));
 
@@ -308,7 +308,10 @@ public:
         sizePolicy1.setVerticalStretch(0);
         sizePolicy1.setHeightForWidth(errorLog->sizePolicy().hasHeightForWidth());
         errorLog->setSizePolicy(sizePolicy1);
-        errorLog->setFont(font1);
+        QFont font2;
+        font2.setFamily(QString::fromUtf8("Raleway SemiBold"));
+        font2.setPointSize(14);
+        errorLog->setFont(font2);
         errorLog->setStyleSheet(QString::fromUtf8("QLineEdit {\n"
 "	background: #04151F;\n"
 "	color: #f8c414;\n"
@@ -416,7 +419,7 @@ public:
         openBrBtn->setSizePolicy(sizePolicy);
         openBrBtn->setFont(font1);
         openBrBtn->setStyleSheet(QString::fromUtf8("QPushButton {\n"
-"	background: rgb(85, 85, 255);\n"
+"	background: rgb(85, 0, 127);\n"
 "	color: #ffffff;\n"
 "}"));
 
@@ -439,12 +442,12 @@ public:
         display->setObjectName(QString::fromUtf8("display"));
         sizePolicy.setHeightForWidth(display->sizePolicy().hasHeightForWidth());
         display->setSizePolicy(sizePolicy);
-        QFont font2;
-        font2.setFamily(QString::fromUtf8("Raleway Medium"));
-        font2.setPointSize(24);
-        font2.setBold(true);
-        font2.setWeight(75);
-        display->setFont(font2);
+        QFont font3;
+        font3.setFamily(QString::fromUtf8("Raleway Medium"));
+        font3.setPointSize(24);
+        font3.setBold(true);
+        font3.setWeight(75);
+        display->setFont(font3);
         display->setStyleSheet(QString::fromUtf8("QLineEdit {\n"
 "	color: #f8c414;\n"
 "	padding: 10px;\n"

@@ -1,10 +1,11 @@
 var searchData=
 [
-  ['lastassertionpassed_879',['lastAssertionPassed',['../struct_catch_1_1_i_result_capture.html#a973435fbdcb2f6f07a0ec5719a01e956',1,'Catch::IResultCapture']]],
-  ['lazyexpression_880',['LazyExpression',['../class_catch_1_1_lazy_expression.html',1,'Catch::LazyExpression'],['../class_catch_1_1_lazy_expression.html#a47186c2487bd4bf871e870ba8048553a',1,'Catch::LazyExpression::LazyExpression(bool isNegated)'],['../class_catch_1_1_lazy_expression.html#ab82d5e94df0e159b018fbde0170e46f8',1,'Catch::LazyExpression::LazyExpression(LazyExpression const &amp;other)']]],
-  ['lcasetags_881',['lcaseTags',['../struct_catch_1_1_test_case_info.html#a844e3de9baf6e53cadfba9733c236bfe',1,'Catch::TestCaseInfo']]],
-  ['license_882',['License',['../_s_i_l_01_open_01_font_01_license_8txt.html#a1b9f19a87a95e77ff312149652d3c8b5',1,'SIL Open Font License.txt']]],
-  ['line_883',['line',['../struct_catch_1_1_source_line_info.html#a841e5d696c7b9cde24e45e61dd979c77',1,'Catch::SourceLineInfo']]],
-  ['lineinfo_884',['lineInfo',['../struct_catch_1_1_assertion_info.html#a17bdbb404ba12658034f833be2f4c3e7',1,'Catch::AssertionInfo::lineInfo()'],['../struct_catch_1_1_message_info.html#a985165328723e599696ebd8e43195cc5',1,'Catch::MessageInfo::lineInfo()'],['../struct_catch_1_1_section_info.html#adbc83b8a3507c4acc8ee249e93465711',1,'Catch::SectionInfo::lineInfo()'],['../struct_catch_1_1_test_case_info.html#aa9407b7f442655b51a2aad24b3fa2fd3',1,'Catch::TestCaseInfo::lineInfo()']]],
-  ['lookup_885',['lookup',['../struct_catch_1_1_detail_1_1_enum_info.html#a2fdfacc411d7afb1cb690366e5e49cb3',1,'Catch::Detail::EnumInfo']]]
+  ['parser_79',['Parser',['../class_parser.html',1,'Parser'],['../class_parser.html#a12234f6cd36b61af4b50c94a179422c1',1,'Parser::Parser()']]],
+  ['parser_2ecpp_80',['Parser.cpp',['../_parser_8cpp.html',1,'']]],
+  ['parser_2ehpp_81',['Parser.hpp',['../_parser_8hpp.html',1,'']]],
+  ['pi_82',['PI',['../class_unary_expression.html#a4f877a86f3877fbc80c81caf5029f4ba',1,'UnaryExpression::PI()'],['../_cos_expression_8hpp.html#a598a3330b3c21701223ee0ca14316eca',1,'PI():&#160;CosExpression.hpp'],['../_sin_expression_8hpp.html#a598a3330b3c21701223ee0ca14316eca',1,'PI():&#160;SinExpression.hpp']]],
+  ['powexpression_83',['PowExpression',['../class_pow_expression.html',1,'PowExpression'],['../class_pow_expression.html#a948537a4f282250a62495d132138fc58',1,'PowExpression::PowExpression()']]],
+  ['powexpression_2ecpp_84',['PowExpression.cpp',['../_pow_expression_8cpp.html',1,'']]],
+  ['powexpression_2ehpp_85',['PowExpression.hpp',['../_pow_expression_8hpp.html',1,'']]],
+  ['prc_86',['prc',['../class_parser.html#a5a8ce3cbab9dbab3faa14303e1ab3c6d',1,'Parser']]]
 ];

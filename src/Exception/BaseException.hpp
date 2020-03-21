@@ -6,7 +6,6 @@ using namespace std;
 
 class BaseException {
 public:
-    // menuliskan pesan kesalahan ke stdout
     virtual string getMessage() = 0;
 };
 #endif // BASEEXCEPTION_H
