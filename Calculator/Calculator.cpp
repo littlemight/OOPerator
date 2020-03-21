@@ -31,13 +31,19 @@ Calculator::Calculator(QWidget *parent)
         } else if (txt == "=") {
             connect(*it, SIGNAL(released()), this, SLOT(eqClicked()));
         } else if (txt == "AC") {
-            connect(*it, SIGNAL(released()), this, SLOT(clearClicked()));
+            connect(*it, SIGNAL(released()), this, SLOT(acClicked()));
         } else if (txt == ".") {
             connect(*it, SIGNAL(released()), this, SLOT(decClicked()));
         } else if (txt == "ans") {
             connect(*it, SIGNAL(released()), this, SLOT(ansClicked()));
         } else if (txt == "⌫") {
             connect(*it, SIGNAL(released()), this, SLOT(delClicked()));
+        } else if (txt == "MC") {
+            connect(*it, SIGNAL(released()), this, SLOT(mcClicked()));
+        } else if (txt == "MR") {
+            connect(*it, SIGNAL(released()), this, SLOT(mrClicked()));
+        } else if (txt  == "CLRSCR") {
+            connect(*it, SIGNAL(released()), this, SLOT(clrscrClicked()));
         }
     }
 }
@@ -106,12 +112,17 @@ void Calculator::eqClicked() {
     }
 }
 
-void Calculator::clearClicked() {
-    this->ans = 0;
+
+void Calculator::clrscrClicked() {
     this->tokens.clear();
-    memo.clear();
     ui->display->setText(QString::number(0));
     ui->errorLog->setText(QString::fromStdString("Bukan Kalkulator Scientific"));
+}
+
+void Calculator::acClicked() {
+    clrscrClicked();
+    this->ans = 0;
+    memo.clear();
 }
 
 void Calculator::decClicked() {
@@ -147,12 +158,15 @@ void Calculator::ansClicked() {
 
 void Calculator::mcClicked() {
     QString dspTxt = ui->display->text();
-    if(digClick()){
-        this->memo.push(this.tokens);
-    }
-    else{
-        cout << "Tidak bisa menyimpan" << this->tokens << endl;
-    }
+    // yang di push itu ans
+    this->memo.enqueue(ans);
+    ui->errorLog->setText(QString::fromStdString(to_string(ans) + " telah disimpan di memory"));
+//    if(digClick()){
+//        this->memo.push(this.tokens);
+//    }
+//    else{
+//        cout << "Tidak bisa menyimpan" << this->tokens << endl;
+//    }
 }
 
 void Calculator::mrClicked() {
@@ -161,7 +175,18 @@ void Calculator::mrClicked() {
         cout << "Tidak ada nilai yang disimpan di history" << endl;
     }
     else{
-        ui->display->setText(QString::number(this->memo.dequeue()));
+        double val = this->memo.dequeue();
+        if (this->tokens.empty()) {
+            ui->display->setText(QString::number(val));
+            this->tokens = to_string(val);
+        } else {
+            ui->display->setText(dspTxt + QString::number(val));
+            if (!isdigit(this->tokens.back()) && this->tokens.back() != '.') {
+                this->tokens += " " + to_string(ans);
+            } else {
+                this->tokens += to_string(ans);
+            }
+        }
     }
 }
 

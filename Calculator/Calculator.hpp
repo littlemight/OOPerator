@@ -5,7 +5,6 @@
 #include <QMainWindow>
 #include <QQueue>
 #include "../Parser/Parser.hpp"
-#include <string>
 
 using namespace std;
 
@@ -35,7 +34,8 @@ private slots:
     void oprClicked();
     void unaryOprClicked();
     void eqClicked();
-    void clearClicked();
+    void acClicked();
+    void clrscrClicked();
     void decClicked();
     void ansClicked();
     void mcClicked();

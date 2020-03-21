@@ -1,7 +1,6 @@
 #ifndef _PARSER_HPP_
 #define _PARSER_HPP_
 
-#include <string>
 #include <map>
 #include <set>
 #include <vector>
