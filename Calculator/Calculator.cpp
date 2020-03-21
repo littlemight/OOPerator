@@ -146,7 +146,13 @@ void Calculator::ansClicked() {
 }
 
 void Calculator::mcClicked() {
-    
+    QString dspTxt = ui->display->text();
+    if(digClick()){
+        this->memo.push(this.tokens);
+    }
+    else{
+        cout << "Tidak bisa menyimpan" << this->tokens << endl;
+    }
 }
 
 void Calculator::mrClicked() {
