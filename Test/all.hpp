@@ -20,5 +20,7 @@
 #include "../Expression/Binary/PowExpression.hpp"
 #include "../Exception/BaseException.hpp"
 #include "../Exception/NegativeSqrtException.hpp"
+#include "../Exception/Exception.hpp"
+#include "../Exception/ModException.hpp"
 
 #endif
