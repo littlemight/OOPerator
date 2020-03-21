@@ -3,9 +3,16 @@
 
 #include "BaseException.hpp"
 
+/**
+ * @brief ImbalanceParenthesisException class
+ * class yang berisi method dan atribut berguna untuk mengevaluasi banyak kurung 
+ * pada ekspresi
+ **/
 class ImbalancedParanthesisException  : public BaseException{
-    //mengirimkan pesan kesalahan jika kurang tanda kurung
     public :
+    	/**
+         * @brief memeriksa banyak kurung pada suatu ekspresi
+         **/
         string getMessage(){
             return "Ekspresi memiliki kurung yang tidak seimbang";
         }

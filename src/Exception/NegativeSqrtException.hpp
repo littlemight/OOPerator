@@ -3,14 +3,26 @@
 
 #include "BaseException.hpp"
 
+/**
+ * @brief NegativeSqrtException class
+ * class yang berisi method dan atribut berguna untuk mengevaluasi nilai sqrt 
+ * pada ekspresi
+ **/
 class NegativeSqrtException: public BaseException {
-    //mengirimkan pesan kesalahan jika sqrt bernilai negatif
 private:
     double number;
 public:
+    /**
+	 * @brief memeriksa nilai sqrt pada suatu ekspresi
+	 * @param number
+	 **/
     NegativeSqrtException(double number) {
         this->number = number;
     }
+    /**
+	 * @brief getMessage untuk menampilkan pesan kesalahan
+     * @return
+	 **/
     string getMessage() {
         string ret = "Bilangan negatif " + to_string(this->number) + " tidak dapat diakarkan";
         return ret;
