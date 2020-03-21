@@ -9,7 +9,7 @@ map<string, int> Parser::initPrc() {
     ret["+"] = 1;
     ret["-"] = 1;
     ret["*"] = 2;
-    ret["-"] = 2;
+    ret["/"] = 2;
     ret["^"] = 3;
     ret["mod"] = 3;
     // everything else is 0
@@ -209,14 +209,9 @@ double Parser::evalExpression(string strTokens) {
     stack<Expression *> values;
     stack<string> operators;
     int sz = tokens.size();
-    cout << strTokens << '\n';
-    for (int i = 0; i < sz; i++) {
-        cout << i << ": " << tokens[i] << '\n';
-    }
 
     Expression* val;
     for (int i = 0; i < sz; i++) {
-        cout << i << ": " << tokens[i] << '\n';
         if (tokens[i] == "(") {
             operators.push(tokens[i]);
         } else if (tokens[i] == ")") {
@@ -256,7 +251,6 @@ double Parser::evalExpression(string strTokens) {
             }
             values.push(val);
         } else if (isBinaryOp(tokens[i])) {
-            cout << operators.top() << '\n';
             while (!operators.empty() && prc[operators.top()] >= prc[tokens[i]]) {
                 evalStack(values, operators);
             }
