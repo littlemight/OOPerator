@@ -146,11 +146,17 @@ void Calculator::ansClicked() {
 }
 
 void Calculator::mcClicked() {
-
+    
 }
 
 void Calculator::mrClicked() {
-
+    QString dspTxt = ui->display->text();
+    if (this->memo.empty()){
+        cout << "Tidak ada nilai yang disimpan di history" << endl;
+    }
+    else{
+        ui->display->setText(this->memo.front());
+    }
 }
 
 void Calculator::delClicked()
