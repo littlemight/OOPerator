@@ -29,6 +29,7 @@ class Parser
 private:
     static void splitTokens(string strTokens, vector<string> &tokens);
     static bool isUnaryStmt(string stmt, double &val, string &unaryOp);
+<<<<<<< HEAD
     static void evalStack(stack<Expression *> &values, stack<string> &operators);
     static Expression* evalUnaryOp(Expression* a, string unaryOp);
     static Expression* evalBinaryOp(Expression* a, Expression* b, string binaryOp);
@@ -39,6 +40,14 @@ public:
     static double evalUnaryOp(double a, string unaryOp);
     static double evalBinaryOp(double a, double b, string binaryOp);
     // END OF UNIT TEST UTILITY
+=======
+    static Expression* evalUnaryOp(Expression* a, string unaryOp);
+    static Expression* evalBinaryOp(Expression* a, Expression* b, string binaryOp);
+    static void evalStack(stack<Expression *> &values, stack<string> &operators);
+public:
+    Parser();
+    ~Parser();
+>>>>>>> 144abf4b03ac9deb47e75e4f5a2cdc43f8055aab
     static double evalExpression(string strTokens);
     static bool isValidNum(string s);
     static bool isBinaryOp(string opr);
@@ -52,4 +61,8 @@ private:
     static set<string> initUnaryOps();
 };
 
+<<<<<<< HEAD
 #endif // PARSER_H
+=======
+#endif // PARSER_H
+>>>>>>> 144abf4b03ac9deb47e75e4f5a2cdc43f8055aab

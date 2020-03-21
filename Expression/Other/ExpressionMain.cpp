@@ -106,6 +106,7 @@ void Evaluate(string buffer, double* finalVal){
     }
 }
 
+<<<<<<< HEAD
 // int main(){
 //     string buffer1 = "100x200.5";
 //     string buffer2 = "100/200.5";
@@ -127,3 +128,26 @@ void Evaluate(string buffer, double* finalVal){
 //     PowExpression* a4 = new PowExpression(new TerminalExpression(2), new TerminalExpression(3));
 //     cout << "2^3 "<< " = " << a4->solve() << endl;
 // }
+=======
+int main(){
+    string buffer1 = "100x200.5";
+    string buffer2 = "100/200.5";
+    string buffer3 = "100+200.5";
+    string buffer4 = "100-200.5";
+    string buffer5 = "100%20";
+    double value;
+    cout << "Case 1" << endl; Evaluate(buffer1, &value);
+    cout << "Case 2" << endl; Evaluate(buffer2, &value);
+    cout << "Case 3" << endl; Evaluate(buffer3, &value);
+    cout << "Case 4" << endl; Evaluate(buffer4, &value);
+    cout << "Case 5" << endl; Evaluate(buffer5, &value);
+    SinExpression* a1 = new SinExpression(new TerminalExpression(45));
+    cout << "sin45 "<< " = " << a1->solve() << endl;
+    CosExpression* a2 = new CosExpression(new TerminalExpression(45));
+    cout << "cos45 "<< " = " << a2->solve() << endl;
+    TanExpression* a3 = new TanExpression(new TerminalExpression(45));
+    cout << "tan45 "<< " = " << a3->solve() << endl;
+    PowExpression* a4 = new PowExpression(new TerminalExpression(2), new TerminalExpression(3));
+    cout << "2^3 "<< " = " << a4->solve() << endl;
+}
+>>>>>>> 144abf4b03ac9deb47e75e4f5a2cdc43f8055aab
