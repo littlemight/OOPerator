@@ -157,13 +157,10 @@ Expression* Parser::evalUnaryOp(Expression* a, string unaryOp) {
     return ret;
 }
 
-<<<<<<< HEAD
 double Parser::evalUnaryOp(double a, string unaryOp) {
     return evalUnaryOp(new TerminalExpression(a), unaryOp)->solve();
 }
 
-=======
->>>>>>> 144abf4b03ac9deb47e75e4f5a2cdc43f8055aab
 Expression* Parser::evalBinaryOp(Expression* a, Expression* b, string binaryOp) {
     // cout << "EVALUATING: " << a << ' ' << binaryOp << ' ' << b << '\n';
     Expression* ret;
@@ -183,13 +180,10 @@ Expression* Parser::evalBinaryOp(Expression* a, Expression* b, string binaryOp) 
     return ret;
 }
 
-<<<<<<< HEAD
 double Parser::evalBinaryOp(double a, double b, string binaryOp) {
     return evalBinaryOp(new TerminalExpression(a), new TerminalExpression(b), binaryOp)->solve();
 }
 
-=======
->>>>>>> 144abf4b03ac9deb47e75e4f5a2cdc43f8055aab
 void Parser::evalStack(stack<Expression *> &values, stack<string> &operators) {
     if (values.size() < 2) {
         throw "Invalid Mathematical Operation";

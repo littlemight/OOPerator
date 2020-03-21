@@ -155,7 +155,7 @@ void Calculator::mrClicked() {
         cout << "Tidak ada nilai yang disimpan di history" << endl;
     }
     else{
-        ui->display->setText(this->memo.front());
+        ui->display->setText(QString::number(this->memo.dequeue()));
     }
 }
 
