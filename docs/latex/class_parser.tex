@@ -2,13 +2,23 @@
 \label{class_parser}\index{Parser@{Parser}}
 
 
-Class yang digunakan untuk mengevaluasi string yang berisi ekspresi matematika.  
+Class yang berisi method static. digunakan untuk mengevaluasi string yang berisi ekspresi matematika.  
 
 
 
 
 {\ttfamily \#include $<$Parser.\+hpp$>$}
 
+
+
+Collaboration diagram for Parser\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=178pt]{class_parser__coll__graph}
+\end{center}
+\end{figure}
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -37,9 +47,9 @@ static bool \mbox{\hyperlink{class_parser_ab48eb76878d91569df922b9f4e361e39}{is\
 static void \mbox{\hyperlink{class_parser_abef93e75d591111c700f71e2566e41fa}{split\+Tokens}} (string str\+Tokens, vector$<$ string $>$ \&tokens)
 \begin{DoxyCompactList}\small\item\em Memisahkan sebuah string yang berisi token-\/token menjadi vector of tokens. \end{DoxyCompactList}\item 
 static bool \mbox{\hyperlink{class_parser_a5307a60d5a2649b055468454a32e7e4f}{is\+Unary\+Stmt}} (string stmt, double \&val, string \&unary\+Op)
-\begin{DoxyCompactList}\small\item\em is\+Unary\+Stmt hehehe \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Memeriksa apakah sebuah string adalah ekspresi unary yang valid. \end{DoxyCompactList}\item 
 static void \mbox{\hyperlink{class_parser_a5553d8a8c72c60f29bef17fce3a1eba9}{eval\+Stack}} (stack$<$ \mbox{\hyperlink{class_expression}{Expression}} $\ast$ $>$ \&values, stack$<$ string $>$ \&operators)
-\begin{DoxyCompactList}\small\item\em eval\+Stack \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Mengambil dua nilai dari stack values dan satu operator dari stack operators, jika kondisi tidak terpenuhi, maka akan dilempar exception. \end{DoxyCompactList}\item 
 static \mbox{\hyperlink{class_expression}{Expression}} $\ast$ \mbox{\hyperlink{class_parser_a031bded632cf8e22fd995a3ee030337e}{eval\+Unary\+Op}} (\mbox{\hyperlink{class_expression}{Expression}} $\ast$a, string unary\+Op)
 \item 
 static \mbox{\hyperlink{class_expression}{Expression}} $\ast$ \mbox{\hyperlink{class_parser_a15561e3bfa1e3231c3f7262aade32649}{eval\+Binary\+Op}} (\mbox{\hyperlink{class_expression}{Expression}} $\ast$a, \mbox{\hyperlink{class_expression}{Expression}} $\ast$b, string binary\+Op)
@@ -62,7 +72,7 @@ static set$<$ string $>$ \mbox{\hyperlink{class_parser_a973952b67dcd6c4f6c26e5f2
 
 
 \doxysubsection{Detailed Description}
-Class yang digunakan untuk mengevaluasi string yang berisi ekspresi matematika. 
+Class yang berisi method static. digunakan untuk mengevaluasi string yang berisi ekspresi matematika. 
 
 \doxysubsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{class_parser_a12234f6cd36b61af4b50c94a179422c1}\label{class_parser_a12234f6cd36b61af4b50c94a179422c1}} 
@@ -106,7 +116,7 @@ Class yang digunakan untuk mengevaluasi string yang berisi ekspresi matematika.
 
 
 
-eval\+Stack 
+Mengambil dua nilai dari stack values dan satu operator dari stack operators, jika kondisi tidak terpenuhi, maka akan dilempar exception. 
 
 
 \begin{DoxyParams}{Parameters}
@@ -165,7 +175,7 @@ eval\+Stack
 
 
 
-is\+Unary\+Stmt hehehe 
+Memeriksa apakah sebuah string adalah ekspresi unary yang valid. 
 
 
 \begin{DoxyParams}{Parameters}

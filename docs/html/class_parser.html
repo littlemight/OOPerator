@@ -72,10 +72,19 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>Class yang digunakan untuk mengevaluasi string yang berisi ekspresi matematika.  
+<p>Class yang berisi method static. digunakan untuk mengevaluasi string yang berisi ekspresi matematika.  
  <a href="class_parser.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="_parser_8hpp_source.html">Parser.hpp</a>&gt;</code></p>
+<div class="dynheader">
+Collaboration diagram for Parser:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_parser__coll__graph.png" border="0" usemap="#_parser_coll__map" alt="Collaboration graph"/></div>
+<map name="_parser_coll__map" id="_parser_coll__map">
+<area shape="rect" title="Class yang berisi method static. digunakan untuk mengevaluasi string yang berisi ekspresi matematika." alt="" coords="5,160,135,457"/>
+<area shape="rect" title=" " alt="" coords="22,5,118,83"/>
+</map>
+</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -105,10 +114,10 @@ Static Private Member Functions</h2></td></tr>
 <tr class="memdesc:abef93e75d591111c700f71e2566e41fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Memisahkan sebuah string yang berisi token-token menjadi vector of tokens.  <a href="class_parser.html#abef93e75d591111c700f71e2566e41fa">More...</a><br /></td></tr>
 <tr class="separator:abef93e75d591111c700f71e2566e41fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5307a60d5a2649b055468454a32e7e4f"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_parser.html#a5307a60d5a2649b055468454a32e7e4f">isUnaryStmt</a> (string stmt, double &amp;val, string &amp;unaryOp)</td></tr>
-<tr class="memdesc:a5307a60d5a2649b055468454a32e7e4f"><td class="mdescLeft">&#160;</td><td class="mdescRight">isUnaryStmt hehehe  <a href="class_parser.html#a5307a60d5a2649b055468454a32e7e4f">More...</a><br /></td></tr>
+<tr class="memdesc:a5307a60d5a2649b055468454a32e7e4f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Memeriksa apakah sebuah string adalah ekspresi unary yang valid.  <a href="class_parser.html#a5307a60d5a2649b055468454a32e7e4f">More...</a><br /></td></tr>
 <tr class="separator:a5307a60d5a2649b055468454a32e7e4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5553d8a8c72c60f29bef17fce3a1eba9"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_parser.html#a5553d8a8c72c60f29bef17fce3a1eba9">evalStack</a> (stack&lt; <a class="el" href="class_expression.html">Expression</a> * &gt; &amp;values, stack&lt; string &gt; &amp;operators)</td></tr>
-<tr class="memdesc:a5553d8a8c72c60f29bef17fce3a1eba9"><td class="mdescLeft">&#160;</td><td class="mdescRight">evalStack  <a href="class_parser.html#a5553d8a8c72c60f29bef17fce3a1eba9">More...</a><br /></td></tr>
+<tr class="memdesc:a5553d8a8c72c60f29bef17fce3a1eba9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mengambil dua nilai dari stack values dan satu operator dari stack operators, jika kondisi tidak terpenuhi, maka akan dilempar exception.  <a href="class_parser.html#a5553d8a8c72c60f29bef17fce3a1eba9">More...</a><br /></td></tr>
 <tr class="separator:a5553d8a8c72c60f29bef17fce3a1eba9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a031bded632cf8e22fd995a3ee030337e"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_expression.html">Expression</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_parser.html#a031bded632cf8e22fd995a3ee030337e">evalUnaryOp</a> (<a class="el" href="class_expression.html">Expression</a> *a, string unaryOp)</td></tr>
 <tr class="separator:a031bded632cf8e22fd995a3ee030337e"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -131,7 +140,7 @@ Static Private Attributes</h2></td></tr>
 <tr class="separator:a973952b67dcd6c4f6c26e5f21876c58c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Class yang digunakan untuk mengevaluasi string yang berisi ekspresi matematika. </p>
+<div class="textblock"><p>Class yang berisi method static. digunakan untuk mengevaluasi string yang berisi ekspresi matematika. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a12234f6cd36b61af4b50c94a179422c1"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a12234f6cd36b61af4b50c94a179422c1">&#9670;&nbsp;</a></span>Parser()</h2>
@@ -312,7 +321,7 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>evalStack </p>
+<p>Mengambil dua nilai dari stack values dan satu operator dari stack operators, jika kondisi tidak terpenuhi, maka akan dilempar exception. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">values</td><td></td></tr>
@@ -562,7 +571,7 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>isUnaryStmt hehehe </p>
+<p>Memeriksa apakah sebuah string adalah ekspresi unary yang valid. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">stmt</td><td></td></tr>

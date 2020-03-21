@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['y_903',['y',['../class_binary_expression.html#a80a91864fc5ca9351c7544d16e2e9197',1,'BinaryExpression']]],
-  ['yes_904',['Yes',['../struct_catch_1_1_case_sensitive.html#aad49d3aee2d97066642fffa919685c6aa7c5550b69ec3c502e6f609b67f9613c6',1,'Catch::CaseSensitive::Yes()'],['../struct_catch_1_1_use_colour.html#a6aa78da0c2de7539bb9e3757e204a3f1ad7bb64e0fe49ba51aafbd3e14f06e98d',1,'Catch::UseColour::Yes()']]],
-  ['yesorno_905',['YesOrNo',['../struct_catch_1_1_use_colour.html#a6aa78da0c2de7539bb9e3757e204a3f1',1,'Catch::UseColour']]]
+  ['x_1338',['x',['../class_binary_expression.html#a634c81515efbcda11dcde53e340320d7',1,'BinaryExpression::x()'],['../class_terminal_expression.html#a4f27b0c76b1cb96e34cf9c6a0a91d2de',1,'TerminalExpression::x()'],['../class_unary_expression.html#a4136c1a35409e5913a08e30fa2d55ff1',1,'UnaryExpression::x()']]]
 ];

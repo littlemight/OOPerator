@@ -4,5 +4,5 @@ set var=
 for %%x in (%*) do (
    set var=!var!%%x,
 )
-utest --order lex -s %var%
+bin/test/utest --order lex -s %var%
 endlocal
