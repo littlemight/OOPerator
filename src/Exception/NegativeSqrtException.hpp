@@ -4,6 +4,7 @@
 #include "BaseException.hpp"
 
 class NegativeSqrtException: public BaseException {
+    //mengirimkan pesan kesalahan jika sqrt bernilai negatif
 private:
     double number;
 public:

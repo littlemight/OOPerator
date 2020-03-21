@@ -4,6 +4,7 @@
 #include "BaseException.hpp"
 
 class IllegalExpressionMate : public BaseException{
+	//mengirimkan pesan kesalahan jika tidak ada operator
 	private:
 		double number1;
 		double number2;
@@ -20,6 +21,7 @@ class IllegalExpressionMate : public BaseException{
 };
 
 class InvalidDot : public BaseException{
+	//mengirimkan pesan kesalahan jika "." tidak sesuai
 	private:
 		string dot;
 	public :
@@ -35,6 +37,7 @@ class InvalidDot : public BaseException{
 };
 
 class MoreThanOneOperator : public BaseException{
+	//mengirimkan pesan kesalahan jika operator lebih dari satu
 	private:
 		string opertor;
 	public :
@@ -48,6 +51,7 @@ class MoreThanOneOperator : public BaseException{
 };
 
 class ImbalanceParenthesis  : public BaseException{
+	//mengirimkan pesan kesalahan jika kurang tanda kurung
 	private :
 		string Kurung;
 	public :
@@ -60,6 +64,7 @@ class ImbalanceParenthesis  : public BaseException{
 		}
 };
 class DivideWithZero : public BaseException {
+	//mengirimkan pesan kesalahan jika dibagi dengan 0
 	public :
 		string getMessage(){
 			string ret = "Tidak bisa membagi dengan angka 0";
@@ -68,6 +73,7 @@ class DivideWithZero : public BaseException {
 };
 
 class NoParanthesisInSin : public BaseException{
+	//mengirimkan pesan kesalahan jika sin tidak dilengkapi kurung
 	public :
 		string getMessage(){
 			string ret = "Fungsi Sin ini tidak memiliki kurung";
@@ -77,6 +83,7 @@ class NoParanthesisInSin : public BaseException{
 };
 
 class NoParanthesisInCos : public BaseException{
+	//mengirimkan pesan kesalahan jika cos tidak dilengkapi kurung
 	public :
 		string getMessage(){
 			string ret = "Fungsi Cos ini tidak memiliki kurung";
@@ -86,6 +93,7 @@ class NoParanthesisInCos : public BaseException{
 };
 
 class NoParanthesisInTan : public BaseException{
+	//mengirimkan pesan kesalahan jika cos tidak dilengkapi kurung
 	public :
 		string getMessage(){
 			string ret = "Fungsi Tan ini tidak memiliki kurung";
