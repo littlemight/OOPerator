@@ -7,5 +7,8 @@ DivideExpression::DivideExpression(Expression *x, Expression *y): BinaryExpressi
 }
 
 double DivideExpression::solve() {
+	if (y->solve() == 0) {
+        throw new DivideWithZero;
+    }
 	return (x->solve() / y->solve());
 }

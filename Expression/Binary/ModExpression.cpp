@@ -16,13 +16,14 @@ bool ModExpression::isBothInt(){
 }
 
 double ModExpression::solve() {
-    if (isBothInt()){
+    if (y->solve() == 0) {
+            throw new ZeroModException;
+        }
+    else if (isBothInt()){
         int result = (int(x->solve()) % int(y->solve()));
         return result;
-    }
+    } 
     else {
-        // THROW EXCEPTION
-        return -999;
+        throw new DecimalModException;
     }
-	
 }

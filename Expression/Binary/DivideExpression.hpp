@@ -4,6 +4,7 @@
 #ifndef _DIVIDE_EXPRESSION_HPP_
 #define _DIVIDE_EXPRESSION_HPP_
 #include "BinaryExpression.hpp"
+#include "../../Exception/Exception.hpp"
 
 class DivideExpression: public BinaryExpression {
 public:
