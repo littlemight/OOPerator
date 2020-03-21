@@ -203,6 +203,9 @@ void Parser::evalStack(stack<Expression *> &values, stack<string> &operators) {
 }
 
 double Parser::evalExpression(string strTokens) {
+    if (strTokens.empty()) {
+        return 0;
+    }
     vector<string> tokens;
     tokens.clear();
     splitTokens(strTokens, tokens);
