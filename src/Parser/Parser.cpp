@@ -156,6 +156,8 @@ Expression* Parser::evalUnaryOp(Expression* a, string unaryOp) {
         ret = new TanExpression(a);
     } else if (unaryOp == "sqrt") {
         ret = new SqrtExpression(a);
+    } else if (unaryOp == "-") {
+        ret = new NegativeExpression(a);
     }
     return ret;
 }
