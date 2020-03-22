@@ -51,6 +51,18 @@ windeployqt.exe --quick --no-translations .
 ```
 ![deploy_deploy](asset/deploy_deploy.gif)
 
+Jika terdapat error seperti berikut
+
+![deploy_error](asset/deploy_error.png)
+
+Maka silahkan mencoba build menggunakan Mingw32 di Qt Creator, dan deploy pada tahap sebelumnya menggunakan terminal Qt 32-bit.
+
+## Running
+
+File executable yang sudah di build berada pada folder ```deploy```
+
+![deploy_run](asset/deploy_run.gif)
+
 ## Unit Testing
 
 Unit testing dilakukan menggunakan framework Catch2. Testing dilakukan untuk setiap Expression, dan beberapa fungsi-fungsi kelas Parser.
@@ -137,6 +149,10 @@ Berikut adalah list modul-modul yang diujikan
 * Multiply
 * Pow
 * Mod
+* Sin
+* Tan
+* Cos
+* Sqrt
 * Queue
 * Parser
 
@@ -220,15 +236,21 @@ Berikut adalah struktur folder dari proyek ini
     |
     \---Test
             AddTest.cpp
-            all.hpp
-            catch.hpp
+            CosTest.cpp
             DivideTest.cpp
             MainTest.cpp
             ModTest.cpp
             MultiplyTest.cpp
+            NegativeTest.cpp
+            ParserTest.cpp
             PowTest.cpp
+            QueueTest.cpp
+            SinTest.cpp
             SqrtTest.cpp
             SubstractTest.cpp
+            TanTest.cpp
+            all.hpp
+            catch.hpp
 ```
 
 ## Built With
@@ -246,10 +268,11 @@ Berikut adalah struktur folder dari proyek ini
 * **Arya Beri Argya Rasidi** - *13518131*
 * **Michel Fang** - *13518137*
 
-## Notes
-Fitur-fitur dasar dan tambahan tidak terlepas dari bug, terutama fitur-fitur yang merupakan spesifikasi *bonus*, oleh karena itu kami minta maaf atas ketidaksempurnaan program.
 
 ## Acknowledgments
 
 * Dosen IF2210 K2, Muhammad Zuhri Catur Candra, ST., MT
 * Asisten Pembimbing, Antonio Setya
+
+## Notes
+Fitur-fitur dasar dan tambahan tidak terlepas dari bug, terutama fitur-fitur yang merupakan spesifikasi *bonus*, oleh karena itu kami minta maaf atas ketidaksempurnaan program.

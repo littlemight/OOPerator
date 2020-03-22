@@ -4,8 +4,7 @@
 #include "BaseException.hpp"
 
 /**
- * @brief InvalidDecimalException class
- * class yang berisi method dan atribut berguna untuk memberitahu bahwa sebuah string memiliki decimal yang salah 
+ * @brief Class yang berisi method dan atribut berguna untuk memberitahu bahwa sebuah string memiliki decimal yang salah
  * pada ekspresi
  **/
 class InvalidDecimalException : public BaseException {

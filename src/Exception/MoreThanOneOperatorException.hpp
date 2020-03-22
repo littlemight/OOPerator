@@ -4,8 +4,7 @@
 #include "BaseException.hpp"
 
 /**
- * @brief MoreThanOneOperatorException class
- * class yang berisi method dan atribut berguna untuk mengevaluasi banyak operator 
+ * @brief Class yang berisi method dan atribut berguna untuk mengevaluasi banyak operator
  * pada ekspresi
  **/
 class MoreThanOneOperatorException : public BaseException{

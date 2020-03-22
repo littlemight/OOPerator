@@ -123,7 +123,11 @@ bool Parser::isUnaryStmt(string stmt, double &val, string &unaryOp) {
     int sz = tmp.size();
     unaryOp = tmp[0];
     if (!isUnaryOp((unaryOp))) {
-        throw new UndefinedOperatorException(unaryOp);
+        if (unaryOp == ".") {
+            throw new InvalidDecimalException(stmt);
+        } else {
+            throw new UndefinedOperatorException(unaryOp);
+        }
     }
     if (!(tmp[1] == "(" && tmp[sz - 1] == ")")) {
         throw new NoParanthesisInUnaryException(unaryOp);

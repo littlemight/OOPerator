@@ -4,8 +4,7 @@
 #include "BaseException.hpp"
 
 /**
- * @brief UndefinedOperatorException class
- * class yang berisi method dan atribut berguna untuk mengevaluasi operator tidak terdefinisi 
+ * @brief Class yang berisi method dan atribut berguna untuk mengevaluasi operator tidak terdefinisi
  * pada ekspresi
  **/
 class UndefinedOperatorException : public BaseException{

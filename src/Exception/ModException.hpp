@@ -4,8 +4,7 @@
 #include "BaseException.hpp"
 
 /**
- * @brief ZeroModException class
- * class yang berisi method berguna untuk mengevaluasi modulo dibagi 0
+ * @brief Class yang berisi method berguna untuk mengevaluasi modulo dibagi 0
  * pada ekspresi
  **/
 class ZeroModException: public BaseException {    
@@ -21,8 +20,7 @@ public:
 };
 
 /**
- * @brief DecimalModException class
- * class yang berisi method berguna untuk mengevaluasi modulo decimal 
+ * @brief Class yang berisi method berguna untuk mengevaluasi modulo decimal
  * pada ekspresi
  **/
 class DecimalModException: public BaseException {

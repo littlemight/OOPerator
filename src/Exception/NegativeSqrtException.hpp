@@ -4,8 +4,7 @@
 #include "BaseException.hpp"
 
 /**
- * @brief NegativeSqrtException class
- * class yang berisi method dan atribut berguna untuk mengevaluasi nilai sqrt 
+ * @brief Class yang berisi method dan atribut berguna untuk mengevaluasi nilai sqrt
  * pada ekspresi
  **/
 class NegativeSqrtException: public BaseException {

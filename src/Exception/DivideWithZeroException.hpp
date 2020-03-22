@@ -4,8 +4,7 @@
 #include "BaseException.hpp"
 
 /**
- * @brief DivideWithZeroException class
- * class yang berisi method berguna untuk mengevaluasi pembagian 0 
+ * @brief Class yang berisi method berguna untuk mengevaluasi pembagian 0
  * pada ekspresi
  **/
 class DivideWithZeroException : public BaseException {

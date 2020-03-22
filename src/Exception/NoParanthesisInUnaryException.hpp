@@ -4,8 +4,7 @@
 #include "BaseException.hpp"
 
 /**
- * @brief NoParanthesisInUnaryException class
- * class yang berisi method berguna untuk mengevaluasi fungsi sin 
+ * @brief Class yang berisi method berguna untuk mengevaluasi fungsi sin
  * pada ekspresi
  **/
 class NoParanthesisInUnaryException: public BaseException {
