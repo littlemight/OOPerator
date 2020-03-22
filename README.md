@@ -137,8 +137,8 @@ Berikut adalah list modul-modul yang diujikan
 * Multiply
 * Pow
 * Mod
-* Queue (otw)
-* Parser (otw)
+* Queue
+* Parser
 
 
 ## Documentation
@@ -247,7 +247,7 @@ Berikut adalah struktur folder dari proyek ini
 * **Michel Fang** - *13518137*
 
 ## Notes
-Fitur-fitur dasar dan tambahan tidak terlepas dari bug, terutama fitur-fitur yang merupakan spesifikasi *bonus*, oleh karena itu penulis minta maaf atas ketidaksempurnaan program.
+Fitur-fitur dasar dan tambahan tidak terlepas dari bug, terutama fitur-fitur yang merupakan spesifikasi *bonus*, oleh karena itu kami minta maaf atas ketidaksempurnaan program.
 
 ## Acknowledgments
 

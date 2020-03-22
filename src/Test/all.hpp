@@ -22,6 +22,11 @@
 #include "../Exception/NegativeSqrtException.hpp"
 #include "../Exception/Exception.hpp"
 #include "../Exception/ModException.hpp"
+#include "../Exception/NoParanthesisInUnaryException.hpp"
+#include "../Exception/ImbalancedParanthesesException.hpp"
+#include "../Exception/InvalidDecimalException.hpp"
+#include "../Exception/UndefinedOperatorException.hpp"
+
 #include <queue>
 
 #endif

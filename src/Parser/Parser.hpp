@@ -43,38 +43,116 @@ private:
 
     /**
      * @brief Memeriksa apakah sebuah string adalah ekspresi unary yang valid
-     * @param stmt
-     * @param val
-     * @param unaryOp
-     * @return
+     * @param stmt Statement uner
+     * @param val Nilai ekspresi dalam operator uner yang telah dievaluasi
+     * @param unaryOp Operator uner
+     * @return Nilai bool yang menyatakan kebeneran ekspresi uner
      */
     static bool isUnaryStmt(string stmt, double &val, string &unaryOp);
 
     /**
      * @brief Mengambil dua nilai dari stack values dan satu operator dari stack operators, jika kondisi tidak terpenuhi, maka akan dilempar exception
-     * @param values
-     * @param operators
+     * @param values Stack yang menyimpan nilai-nilai
+     * @param operators Stack yang menyimpan operator dan kurung
      */
     static void evalStack(stack<Expression *> &values, stack<string> &operators);
+
+    /**
+     * @brief Mengevaluasi operasi uner unaryOp dengan operand berupa ekspresi a
+     * @param a Operan
+     * @param unaryOp String operator uner
+     * @return Nilai evaluasi dalam bentuk ekspresi
+     */
     static Expression* evalUnaryOp(Expression* a, string unaryOp);
+
+    /**
+     * @brief Mengevaluasi ekspresi biner dengan operator binaryOp dan operan ekspresi a dan b
+     * @param a Operan 1
+     * @param b Operan 2
+     * @param binaryOp String operator biner
+     * @return Nilai evaluasi dalam bentuk ekspresi
+     */
     static Expression* evalBinaryOp(Expression* a, Expression* b, string binaryOp);
 public:
     Parser();
     ~Parser();
-    // UNIT TEST UTILITY
+
+    /**
+     * @brief Override dari method evalUnaryOp dengan parameter double, digunakan oleh UnitTest sehingga dibuat public
+     * @param a Operan
+     * @param unaryOp String operator uner
+     * @return Nilai hasil evaluasi
+     */
     static double evalUnaryOp(double a, string unaryOp);
+
+    /**
+     * @brief Override dari method evalBinaryOp dengan parameter double, digunakan oleh UnitTest sehingga dibuat public
+     * @param a Operan 1
+     * @param b Operan 2
+     * @param binaryOp String operator biner
+     * @return Nilai hasil evaluasi
+     */
     static double evalBinaryOp(double a, double b, string binaryOp);
-    // END OF UNIT TEST UTILITY
+
+    /**
+     * @brief Mengevaluasi string ekspresi secara keseluruhan
+     * @param strTokens string ekspresi yang akan dievaluasi
+     * @return Nilai hasil evaluasi
+     */
     static double evalExpression(string strTokens);
+
+    /**
+     * @brief Memeriksa apakah sebuah angka adalah angka yang valid
+     * @param s String angka yang akan diperiksa kebenaran decimalnya
+     * @return Nilai bool yang menyatakan jika angka valid
+     */
     static bool isValidNum(string s);
+
+    /**
+     * @brief Memeriksa apakah opr merupakan operator biner yang valid
+     * @param opr String operator biner
+     * @return Nilai bool yang menyatakan jika operator valid
+     */
     static bool isBinaryOp(string opr);
+
+    /**
+     * @brief Memeriksa apakah opr merupakan operator uner yang valid
+     * @param opr String operator uner
+     * @return Nilai bool yang menyatakan jika operator valid
+     */
     static bool isUnaryOp(string opr);
 private:
+    /**
+     * @brief prc Menyimpan prioritas(precedence) dari setiap operator
+     */
     static map<string, int> prc;
+
+    /**
+     * @brief binaryOps Menyimpan kumpulan operator biner yang valid
+     */
     static set<string> binaryOps;
+
+    /**
+     * @brief unaryOps Menyimpan kumpulan operator uner yang valid
+     */
     static set<string> unaryOps;
+
+    /**
+     * @brief initPrc Inisiasi prc
+     * @return map<string, int>
+     */
     static map<string, int> initPrc();
+
+    /**
+     * @brief initBinaryOps Inisiasi binaryOps
+     * @return set<string>
+     */
     static set<string> initBinaryOps();
+
+    /**
+     * @brief initUnaryOps Inisiasi unaryOps
+     * @return set<string>
+     */
     static set<string> initUnaryOps();
 };
 #endif // PARSER_H
