@@ -76,6 +76,60 @@ Anda juga dapat memberikan lebih dari satu argumen untuk menguji lebih dari satu
 rUT Add Divide
 ```
 
+Mekanisme test untuk modul-modul Expression adalah sebagai berikut:
+akan diperiksa method solve() dari tiap ekspresi operator
+Sebagai contoh:
+```
+AddExpression a(new TerminalExpression(1), new TerminalExpression(3)))
+REQUIRE(a.solve() == 3);
+```
+Untuk mempersingkat kode, make telah dibuat method public yang ada di class Parser
+```
+// Private method, digunakan untuk mengevaluasi string ekspresi secara keseluruhan
+Expression* Parser::evalUnaryOp(Expression* a, string unaryOp) {
+    Expression* ret;
+    if (unaryOp == "sin") {
+        ret = new SinExpression(a);
+    } else if (unaryOp == "cos") {
+        ret = new CosExpression(a);
+    } else if (unaryOp == "tan") {
+        ret = new TanExpression(a);
+    } else if (unaryOp == "sqrt") {
+        ret = new SqrtExpression(a);
+    }
+    return ret;
+}
+
+// Public method, digunakan oleh unit test
+double Parser::evalUnaryOp(double a, string unaryOp) {
+    return evalUnaryOp(new TerminalExpression(a), unaryOp)->solve();
+}
+
+// Private method, digunakan untuk mengevaluasi string ekspresi secara keseluruhan
+Expression* Parser::evalBinaryOp(Expression* a, Expression* b, string binaryOp) {
+    Expression* ret;
+    if (binaryOp == "+") {
+        ret = new AddExpression(a, b);
+    } else if (binaryOp == "-") {
+        ret = new SubstractExpression(a, b);
+    } else if (binaryOp == "*") {
+        ret = new MultiplyExpression(a, b);
+    } else if (binaryOp == "/") {
+        ret = new DivideExpression(a, b);
+    } else if (binaryOp == "^") {
+        ret = new PowExpression(a, b);
+    } else if (binaryOp == "mod") {
+        ret = new ModExpression(a, b);
+    }
+    return ret;
+}
+
+// Public method, digunakan oleh unit test
+double Parser::evalBinaryOp(double a, double b, string binaryOp) {
+    return evalBinaryOp(new TerminalExpression(a), new TerminalExpression(b), binaryOp)->solve();
+}
+```
+
 Berikut adalah list modul-modul yang diujikan
 * Add
 * Substract
@@ -91,7 +145,7 @@ Berikut adalah list modul-modul yang diujikan
 Dokumentasi dapat diakses di docs/html/index.html, dokumentasi ini dibuat menggunakan Doxygen.
 
 ## Project Structure
-Berikut adalah struktur folder dari proyek ini ini
+Berikut adalah struktur folder dari proyek ini
 ```
 +---bin
 +---deploy

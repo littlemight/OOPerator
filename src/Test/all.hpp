@@ -22,5 +22,6 @@
 #include "../Exception/NegativeSqrtException.hpp"
 #include "../Exception/Exception.hpp"
 #include "../Exception/ModException.hpp"
+#include <queue>
 
 #endif
