@@ -1,5 +1,5 @@
 @echo off
-setlocal enabledelayedexpansion
+setlocal enableextensions enabledelayedexpansion
 set var=
 FOR /R "." %%g IN (*.cpp) DO ( 
    REM COMPILE EVERY FILE EXCEPT Calculator.cpp and main.cpp
@@ -7,5 +7,11 @@ FOR /R "." %%g IN (*.cpp) DO (
       set var=!var!  %%g
    )
 )
-echo Compiling all unit tests... && g++ -std=c++0x !var! -o bin/test/utest && echo Compilation done! && pause
+echo Compiling all unit tests...
+mkdir bin
+cd bin
+mkdir test
+cd ..
+g++ -std=c++0x !var! -o bin/test/utest
 endlocal
+echo Compilation done! && pause
