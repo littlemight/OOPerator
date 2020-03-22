@@ -156,6 +156,7 @@ void Calculator::mcClicked() {
 
     try {
         double val = Parser::evalExpression(this->tokens);
+        this->ans = val;
         this->memo.push(val);
         ui->errorLog->setText(QString::fromStdString(to_string(val) + " telah disimpan di memory"));
     } catch (BaseException* e) {
