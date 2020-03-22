@@ -158,6 +158,8 @@ Expression* Parser::evalUnaryOp(Expression* a, string unaryOp) {
         ret = new SqrtExpression(a);
     } else if (unaryOp == "-") {
         ret = new NegativeExpression(a);
+    } else {
+        throw new ImbalancedParanthesisException;
     }
     return ret;
 }
@@ -180,6 +182,8 @@ Expression* Parser::evalBinaryOp(Expression* a, Expression* b, string binaryOp) 
         ret = new PowExpression(a, b);
     } else if (binaryOp == "mod") {
         ret = new ModExpression(a, b);
+    } else {
+        throw new ImbalancedParanthesisException;
     }
     return ret;
 }
@@ -191,7 +195,11 @@ double Parser::evalBinaryOp(double a, double b, string binaryOp) {
 void Parser::evalStack(stack<Expression *> &values, stack<string> &operators) {
 
     if (values.size() < 2) {
-        throw new MoreThanOneOperatorException;
+        if (operators.top() == "(" || operators.top() == ")") {
+            throw new ImbalancedParanthesisException;
+        } else {
+            throw new MoreThanOneOperatorException;
+        }
     }
 
     Expression* secVal = values.top();
@@ -217,10 +225,6 @@ double Parser::evalExpression(string strTokens) {
     stack<Expression *> values;
     stack<string> operators;
     int sz = tokens.size();
-
-    for (int i = 0; i < sz; i++) {
-        cout << i + 1 << ": " << tokens[i] << '\n';
-    }
 
     Expression* val;
     for (int i = 0; i < sz; i++) {
@@ -270,6 +274,7 @@ double Parser::evalExpression(string strTokens) {
             values.push(evalUnaryOp(new TerminalExpression(tmp), unaryOp));
         }
     }
+
     while (!operators.empty()) {
         evalStack(values, operators);
     }
