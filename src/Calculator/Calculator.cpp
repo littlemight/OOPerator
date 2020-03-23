@@ -177,9 +177,9 @@ void Calculator::mrClicked() {
         } else {
             ui->display->setText(dspTxt + QString::number(val));
             if (!isdigit(this->tokens.back()) && this->tokens.back() != '.') {
-                this->tokens += " " + to_string(ans);
+                this->tokens += " " + to_string(val);
             } else {
-                this->tokens += to_string(ans);
+                this->tokens += to_string(val);
             }
         }
     }

@@ -115,6 +115,7 @@ bool Parser::isUnaryStmt(string stmt, double &val, string &unaryOp) {
     stringstream ss(stmt);
     string curToken;
 
+    cout << stmt << '\n';
     vector<string> tmp;
     while (ss >> curToken) {
         tmp.push_back(curToken);
@@ -125,7 +126,7 @@ bool Parser::isUnaryStmt(string stmt, double &val, string &unaryOp) {
     if (!isUnaryOp((unaryOp))) {
         if (unaryOp == ".") {
             throw new InvalidDecimalException(stmt);
-        } else {
+        } else if (unaryOp != "-") {
             throw new UndefinedOperatorException(unaryOp);
         }
     }
@@ -232,6 +233,9 @@ double Parser::evalExpression(string strTokens) {
 
     Expression* val;
     for (int i = 0; i < sz; i++) {
+        cout << i << ": " << tokens[i] << '\n';
+    }
+    for (int i = 0; i < sz; i++) {
         if (tokens[i] == "(") {
             operators.push(tokens[i]);
         } else if (tokens[i] == ")") {
@@ -249,7 +253,8 @@ double Parser::evalExpression(string strTokens) {
                 throw new ImbalancedParanthesisException;
             }
         } else if (isdigit(tokens[i][0])||
-                   ((i == 0 || (isBinaryOp(tokens[i - 1]) || tokens[i - 1] == "(")) && tokens[i] == "-" && i < sz - 1 && isdigit(tokens[i + 1][0]))
+                   ((i == 0 || (isBinaryOp(tokens[i - 1]) || tokens[i - 1] == "(")) && tokens[i] == "-" && i < sz - 1 && isdigit(tokens[i + 1][0])) ||
+                   (tokens[i][0] == '-' && tokens[i].size() > 1 && isdigit(tokens[i][1]))
                    ) {
             if ((i == 0 || (isBinaryOp(tokens[i - 1]) || tokens[i - 1] == "(")) &&
                     tokens[i] == "-" &&
@@ -261,9 +266,16 @@ double Parser::evalExpression(string strTokens) {
                 } else {
                     throw new InvalidDecimalException(tokens[i] + tokens[i + 1]);
                 }
-            } else {
+            } else if (isdigit(tokens[i][0])){
                 if (isValidNum(tokens[i])) {
                     val = new TerminalExpression(stod(tokens[i]));
+                } else {
+                    throw new InvalidDecimalException(tokens[i]);
+                }
+            } else {
+                string tmp = tokens[i].substr(1);
+                if (isValidNum(tmp)) {
+                    val = new NegativeExpression(new TerminalExpression(stod(tmp)));
                 } else {
                     throw new InvalidDecimalException(tokens[i]);
                 }
